@@ -9,7 +9,7 @@
        ✏️ PENDIENTES DE PERSONALIZAR (busca los comentarios ⚠️):
        1. Nombre de marca  -> busca  "REDZONE EDGE"  y cámbialo
        2. Enlace de pago   -> busca  "TU_ENLACE_DE_PAGO"  (Stripe / cripto)
-       3. Email de la lista de espera -> configura EMAILJS (mirá instrucciones)
+       3. Lista de espera -> usa MAILCHIMP (formulario embebido) — ya conectado
        ============================================================ -->
   <title>RedZone Edge — Análisis NFL con apuestas sugeridas</title>
   <meta name="description" content="Todo lo que necesitas para decidir en cada partido de la NFL: estadísticas, lesionados, cuotas y un análisis con apuesta sugerida. Suscripción semanal o mensual.">
@@ -25,8 +25,7 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- EmailJS SDK (para la lista de espera) -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <!-- 📬 La lista de espera usa el formulario embebido de MAILCHIMP (ver sección "espera") -->
 
   <style>
     /* ============ PALETA (oscura estilo deporte/apuestas) ============ */
@@ -418,12 +417,14 @@
         <h2 data-en="Join the waitlist" data-es="Únete a la lista de espera">Únete a la lista de espera</h2>
         <p data-en="We launch before the first game of the season. Get early access + a founding-member discount." data-es="Lanzamos antes del primer partido de la temporada. Consigue acceso anticipado + descuento de miembro fundador.">Lanzamos antes del primer partido de la temporada. Consigue acceso anticipado + descuento de miembro fundador.</p>
 
-        <form class="form-espera" id="formEspera" novalidate>
-          <input type="email" id="emailEspera" placeholder="tu@email.com" aria-label="Email" autocomplete="email">
-          <button type="submit" class="btn btn-dorado"><i class="fa-solid fa-envelope"></i> <span data-en="Notify me" data-es="Avísame">Avísame</span></button>
+        <!-- 📬 FORM DE LISTA DE ESPERA (Mailchimp) — cada correo va a tu lista -->
+        <form action="https://redzoneedge.us2.list-manage.com/subscribe/post?u=71ec33dab01bb01337f7be4ea&id=eda313920c&f_id=006476e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-espera" target="_blank" novalidate>
+          <input type="email" name="EMAIL" id="mce-EMAIL" class="required email" required value="" placeholder="tu@email.com" aria-label="Email" autocomplete="email">
+          <!-- Honeypot anti-spam de Mailchimp (no llenar) -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true"><input type="text" name="b_71ec33dab01bb01337f7be4ea_eda313920c" tabindex="-1" value=""></div>
+          <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dorado"><i class="fa-solid fa-envelope"></i> <span data-en="Notify me" data-es="Avísame">Avísame</span></button>
         </form>
-        <div class="msg-error" id="msgErrorEspera" data-en="Please enter a valid email." data-es="Por favor escribe un correo válido.">Por favor escribe un correo válido.</div>
-        <div class="msg-ok" id="msgOkEspera" data-en="🎉 You're on the list! We'll email you at launch." data-es="🎉 ¡Estás en la lista! Te avisaremos por correo en el lanzamiento.">🎉 ¡Estás en la lista! Te avisaremos por correo en el lanzamiento.</div>
+        <p style="font-size:12.5px;color:var(--texto-suave);margin-top:14px;" data-en="No spam. We'll email you at launch." data-es="Sin spam. Te avisaremos en el lanzamiento.">Sin spam. Te avisaremos en el lanzamiento.</p>
       </div>
     </div>
   </section>
@@ -480,19 +481,7 @@
        ⚙️ CONFIGURACIÓN
        ============================================================ */
 
-    /* ⚠️ 1) EMAILJS — para la lista de espera
-       -----------------------------------------
-       Registro gratis en https://www.emailjs.com
-       1) Email Services → Add New Service (elige Gmail). Copia SERVICE_ID.
-       2) Email Templates → Create New Template:
-          Asunto: "Nuevo suscriptor RedZone Edge"
-          Contenido: "Email: {{email}}"
-          Copia TEMPLATE_ID.
-       3) Account → API Keys → copia PUBLIC_KEY.
-       Pega los 3 valores abajo.  */
-    const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY_AQUI";
-    const EMAILJS_SERVICE_ID = "TU_SERVICE_ID_AQUI";
-    const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID_AQUI";
+    /* 📬 La lista de espera la gestiona MAILCHIMP (formulario embebido), no hace falta EmailJS. */
 
     /* ============================================================
        🌐 SELECTOR DE IDIOMA EN/ES
@@ -540,58 +529,8 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
 
-    /* ============================================================
-       📩 LISTA DE ESPERA — validación + envío
-       ============================================================ */
-    const formEspera = document.getElementById('formEspera');
-    const inputEmail = document.getElementById('emailEspera');
-    const msgError = document.getElementById('msgErrorEspera');
-    const msgOk = document.getElementById('msgOkEspera');
-
-    formEspera.addEventListener('submit', function (e) {
-      e.preventDefault();
-      msgOk.classList.remove('visible');
-      msgError.classList.remove('visible');
-      inputEmail.classList.remove('error');
-
-      const email = inputEmail.value.trim();
-      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-      if (!regexEmail.test(email)) {
-        msgError.classList.add('visible');
-        inputEmail.classList.add('error');
-        return;
-      }
-
-      /* Si no has configurado EmailJS aún, avisamos con el formato correcto */
-      if (EMAILJS_PUBLIC_KEY.indexOf("TU_") === 0) {
-        msgOk.textContent = "✅ " + (document.documentElement.lang === 'en' ? "This is a demo. Configure EmailJS to save emails (see instructions in the code)." : "Esto es una demo. Configura EmailJS para guardar correos (mira las instrucciones en el código).");
-        msgOk.classList.add('visible');
-        inputEmail.value = '';
-        return;
-      }
-
-      /* Estado "enviando" */
-      const btn = formEspera.querySelector('button');
-      const original = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ...';
-
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, { email: email })
-        .then(function () {
-          msgOk.textContent = document.documentElement.lang === 'en' ? "🎉 You're on the list!" : "🎉 ¡Estás en la lista!";
-          msgOk.classList.add('visible');
-          inputEmail.value = '';
-          btn.disabled = false;
-          btn.innerHTML = original;
-        })
-        .catch(function (err) {
-          console.error(err);
-          alert(document.documentElement.lang === 'en' ? "Something went wrong. Try again or DM us." : "Algo salió mal. Inténtalo de nuevo o escríbenos.");
-          btn.disabled = false;
-          btn.innerHTML = original;
-        });
-    });
+    /* 📬 La lista de espera ahora usa el formulario embebido de Mailchimp (arriba).
+       Mailchimp gestiona el registro y el envío; no hace falta JS propio. */
   </script>
 </body>
 </html>
