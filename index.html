@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ============================================================
+       🏈 REDZONE EDGE — Página de venta (landing) bilingüe EN/ES
+       ============================================================
+       ✏️ PENDIENTES DE PERSONALIZAR (busca los comentarios ⚠️):
+       1. Nombre de marca  -> busca  "REDZONE EDGE"  y cámbialo
+       2. Enlace de pago   -> busca  "TU_ENLACE_DE_PAGO"  (Stripe / cripto)
+       3. Email de la lista de espera -> configura EMAILJS (mirá instrucciones)
+       ============================================================ -->
+  <title>RedZone Edge — Análisis NFL con apuestas sugeridas</title>
+  <meta name="description" content="Todo lo que necesitas para decidir en cada partido de la NFL: estadísticas, lesionados, cuotas y un análisis con apuesta sugerida. Suscripción semanal o mensual.">
+
+  <!-- 🖼️ FAVICON = logo RedZone Edge (redzoneedge-logo.png, debe estar junto a index.html) -->
+  <link rel="icon" type="image/png" href="redzoneedge-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- EmailJS SDK (para la lista de espera) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    /* ============ PALETA (oscura estilo deporte/apuestas) ============ */
+    :root {
+      --bg:        #0A101F;
+      --bg2:       #0E1628;
+      --card:      #131E36;
+      --card2:     #1A2A4A;
+      --borde:     rgba(255,255,255,.08);
+      --verde:     #22C55E;   /* acento principal (campo de fútbol) */
+      --verde-os:  #16A34A;
+      --dorado:    #F5B70A;   /* acento secundario */
+      --texto:     #EDF2F7;
+      --texto-suave:#9FB0C7;
+      --blanco:    #FFFFFF;
+      --sombra:    0 18px 45px rgba(0,0,0,.35);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:76px; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--texto); line-height:1.7; overflow-x:hidden; }
+    h1,h2,h3,h4 { font-family:'Poppins',sans-serif; color:var(--blanco); line-height:1.2; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
+    .container { width:min(1140px,92%); margin:0 auto; }
+
+    /* Botones */
+    .btn { display:inline-flex; align-items:center; gap:10px; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px;
+      padding:15px 30px; border-radius:50px; border:none; cursor:pointer; transition:transform .25s, box-shadow .25s, background .25s; }
+    .btn:hover { transform:translateY(-3px); box-shadow:0 14px 30px rgba(0,0,0,.35); }
+    .btn-verde { background:var(--verde); color:#07130B; }
+    .btn-verde:hover { background:#1FB95A; }
+    .btn-borde { background:transparent; color:var(--blanco); border:2px solid var(--borde); }
+    .btn-borde:hover { border-color:var(--verde); color:var(--verde); }
+    .btn-dorado { background:var(--dorado); color:#201500; }
+
+    /* Animación scroll */
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* Header */
+    header { position:fixed; top:0; left:0; width:100%; z-index:100; background:rgba(10,16,31,.85); backdrop-filter:blur(12px); border-bottom:1px solid var(--borde); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .logo { display:flex; align-items:center; gap:11px; font-family:'Poppins',sans-serif; font-weight:800; font-size:21px; color:var(--blanco); }
+    .logo i { font-size:26px; color:var(--verde); }
+    .logo-img { width:40px; height:40px; border-radius:10px; display:inline-block; }
+    .logo span { color:var(--verde); }
+    .nav-right { display:flex; align-items:center; gap:22px; }
+    .nav-links { display:flex; gap:26px; }
+    .nav-links a { font-weight:600; font-size:15px; color:var(--texto-suave); transition:color .25s; }
+    .nav-links a:hover { color:var(--blanco); }
+
+    /* Selector de idioma EN/ES */
+    .lang-toggle { display:flex; background:var(--card); border-radius:50px; padding:4px; gap:4px; }
+    .lang-toggle button { background:transparent; border:none; color:var(--texto-suave); font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; padding:6px 14px; border-radius:50px; cursor:pointer; }
+    .lang-toggle button.active { background:var(--verde); color:#07130B; }
+
+    /* Hero */
+    .hero { padding:150px 0 90px; background:
+        radial-gradient(900px 500px at 80% -10%, rgba(34,197,94,.18), transparent),
+        radial-gradient(700px 420px at 10% 110%, rgba(245,183,10,.10), transparent),
+        var(--bg); }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:50px; align-items:center; }
+    .badge { display:inline-flex; align-items:center; gap:9px; background:var(--card); border:1px solid var(--borde); padding:8px 18px; border-radius:50px; font-size:13.5px; font-weight:600; color:var(--texto-suave); margin-bottom:22px; }
+    .badge i { color:var(--verde); }
+    .hero h1 { font-size:clamp(34px,5vw,54px); font-weight:800; margin-bottom:18px; }
+    .hero h1 em { font-style:normal; color:var(--verde); }
+    .hero p.sub { font-size:17px; color:var(--texto-suave); max-width:520px; margin-bottom:30px; }
+    .hero-cta { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:30px; }
+    .hero-confianza { display:flex; flex-wrap:wrap; gap:22px; color:var(--texto-suave); font-size:14px; font-weight:600; }
+    .hero-confianza i { color:var(--verde); margin-right:7px; }
+
+    /* Tarjeta mock del hero (simula el análisis) */
+    .mock { background:var(--card); border:1px solid var(--borde); border-radius:20px; padding:24px; box-shadow:var(--sombra); }
+    .mock .tag { display:inline-block; background:var(--verde); color:#07130B; font-weight:700; font-size:12px; padding:4px 12px; border-radius:20px; margin-bottom:14px; }
+    .mock h3 { font-size:20px; margin-bottom:4px; }
+    .mock .matchup { color:var(--texto-suave); font-size:14px; margin-bottom:16px; }
+    .mock .row { display:flex; justify-content:space-between; padding:11px 0; border-top:1px solid var(--borde); font-size:14.5px; }
+    .mock .row b { color:var(--verde); }
+    .mock .row .lbl { color:var(--texto-suave); }
+    .mock .pick { background:var(--card2); border-radius:14px; padding:14px 16px; margin-top:14px; border-left:4px solid var(--dorado); }
+    .mock .pick .lab { font-size:12px; color:var(--texto-suave); text-transform:uppercase; letter-spacing:1px; }
+    .mock .pick .val { font-family:'Poppins',sans-serif; font-weight:700; color:var(--dorado); font-size:17px; }
+
+    /* Secciones */
+    .seccion { padding:90px 0; }
+    .head { text-align:center; max-width:650px; margin:0 auto 55px; }
+    .head .etiqueta { display:inline-block; color:var(--verde); font-weight:700; font-size:13px; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:10px; }
+    .head h2 { font-size:clamp(28px,4vw,40px); margin-bottom:14px; }
+    .head p { color:var(--texto-suave); }
+
+    /* Features */
+    #incluye { background:var(--bg2); }
+    .grid-features { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+    .feat { background:var(--card); border:1px solid var(--borde); border-radius:18px; padding:30px 26px; transition:transform .3s, border-color .3s; }
+    .feat:hover { transform:translateY(-6px); border-color:var(--verde); }
+    .feat .icono { width:58px; height:58px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:18px; }
+    .feat .icono.g { background:rgba(34,197,94,.16); color:var(--verde); }
+    .feat .icono.d { background:rgba(245,183,10,.16); color:var(--dorado); }
+    .feat h3 { font-size:18px; margin-bottom:8px; }
+    .feat p { color:var(--texto-suave); font-size:14.5px; }
+
+    /* Cómo funciona */
+    .pasos { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; }
+    .paso { text-align:center; padding:26px 20px; }
+    .paso .num { width:56px; height:56px; border-radius:50%; background:var(--card2); border:2px solid var(--verde); color:var(--verde); display:flex; align-items:center; justify-content:center; font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; margin:0 auto 16px; }
+    .paso h3 { font-size:17px; margin-bottom:8px; }
+    .paso p { color:var(--texto-suave); font-size:14.5px; }
+
+    /* Precios */
+    #precios { background:var(--bg2); }
+    .grid-precios { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:26px; max-width:980px; margin:0 auto; }
+    .plan { background:var(--card); border:1px solid var(--borde); border-radius:22px; padding:34px 30px; text-align:center; position:relative; transition:transform .3s, border-color .3s; }
+    .plan:hover { transform:translateY(-6px); }
+    .plan.destacado { border-color:var(--verde); box-shadow:0 0 0 1px var(--verde), var(--sombra); }
+    .plan .etiqueta-plan { position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--verde); color:#07130B; font-family:'Poppins',sans-serif; font-weight:700; font-size:12px; padding:5px 16px; border-radius:20px; }
+    .plan h3 { font-size:19px; margin-bottom:6px; }
+    .plan .precio { font-family:'Poppins',sans-serif; font-weight:800; font-size:44px; color:var(--blanco); margin:12px 0; }
+    .plan .precio small { font-size:16px; font-weight:600; color:var(--texto-suave); }
+    .plan .nota { color:var(--texto-suave); font-size:13.5px; margin-bottom:20px; min-height:40px; }
+    .plan ul { list-style:none; text-align:left; margin:0 0 24px; display:grid; gap:11px; }
+    .plan ul li { font-size:14.5px; display:flex; gap:10px; align-items:flex-start; color:var(--texto); }
+    .plan ul li i { color:var(--verde); margin-top:4px; }
+    .plan .btn { width:100%; justify-content:center; }
+
+    /* Lista de espera */
+    #espera { padding:80px 0; }
+    .caja-espera { background:linear-gradient(135deg,var(--card) 0%,var(--card2) 100%); border:1px solid var(--borde); border-radius:26px; padding:50px 40px; text-align:center; box-shadow:var(--sombra); }
+    .caja-espera h2 { font-size:clamp(26px,4vw,34px); margin-bottom:12px; }
+    .caja-espera p { color:var(--texto-suave); max-width:560px; margin:0 auto 28px; }
+    .form-espera { display:flex; gap:12px; max-width:520px; margin:0 auto; }
+    .form-espera input { flex:1; padding:15px 18px; border-radius:50px; border:2px solid var(--borde); background:var(--bg); color:var(--blanco); font-family:inherit; font-size:15px; outline:none; transition:border-color .3s; }
+    .form-espera input:focus { border-color:var(--verde); }
+    .form-espera input.error { border-color:#E56B5E; }
+    .msg-error { display:none; color:#E56B5E; font-size:13px; margin-top:10px; font-weight:600; }
+    .msg-error.visible { display:block; }
+    .msg-ok { display:none; color:var(--verde); font-size:15px; margin-top:16px; font-weight:600; }
+    .msg-ok.visible { display:block; }
+
+    /* Countdown */
+    .countdown-band{display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;background:linear-gradient(90deg,var(--verde),var(--verde-os));color:#07130B;padding:13px 18px;font-family:'Poppins',sans-serif;font-weight:700;font-size:14px;}
+    .countdown-band .cd{background:rgba(0,0,0,.18);border-radius:10px;padding:5px 12px;font-size:17px;text-align:center;min-width:52px;}
+    .countdown-band span.lbl{font-weight:600;}
+    /* FAQ */
+    .faq{max-width:760px;margin:0 auto;}
+    .faq details{background:var(--card);border:1px solid var(--borde);border-radius:14px;margin-bottom:12px;overflow:hidden;}
+    .faq summary{cursor:pointer;padding:18px 20px;font-weight:600;color:var(--blanco);display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:15.5px;}
+    .faq summary::after{content:'+';font-size:24px;color:var(--verde);}
+    .faq details[open] summary::after{content:'–';}
+    .faq .resp{padding:0 20px 20px;color:var(--texto-suave);font-size:14.5px;}
+
+    /* Footer */
+    footer { background:#070C18; padding:55px 0 0; border-top:1px solid var(--borde); }
+    .footer-grid { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:40px; }
+    .footer-grid h4 { font-size:15px; margin-bottom:16px; }
+    .footer-grid p, .footer-grid a, .footer-grid li { font-size:14px; color:var(--texto-suave); }
+    .footer-grid a:hover { color:var(--verde); }
+    .footer-grid .logo { margin-bottom:14px; font-size:19px; }
+    .footer-enlaces li, .footer-contacto li { margin-bottom:10px; }
+    .footer-enlaces a:hover { padding-left:5px; }
+    .footer-contacto li { display:flex; gap:10px; }
+    .footer-contacto i { color:var(--verde); margin-top:4px; }
+    .footer-redes { display:flex; gap:12px; margin-top:16px; }
+    .footer-redes a { width:42px; height:42px; border-radius:50%; background:var(--card2); color:var(--texto); display:flex; align-items:center; justify-content:center; font-size:18px; transition:background .25s, color .25s, transform .25s; }
+    .footer-redes a:hover { background:var(--verde); color:#07130B; transform:translateY(-3px); }
+    .disclaimer { background:rgba(255,255,255,.03); padding:20px 0; font-size:12.5px; color:var(--texto-suave); }
+    .disclaimer .container { max-width:1140px; }
+    .footer-bajo { border-top:1px solid var(--borde); padding:18px 0; text-align:center; font-size:13px; color:var(--texto-suave); }
+
+    /* Responsive */
+    @media (max-width:900px) {
+      .hero-grid { grid-template-columns:1fr; gap:45px; }
+      .nav-links { display:none; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:560px) {
+      .hero { padding:130px 0 70px; }
+      .seccion { padding:65px 0; }
+      .form-espera { flex-direction:column; }
+      .form-espera .btn { width:100%; justify-content:center; }
+      .footer-grid { grid-template-columns:1fr; }
+      .nav-right .btn { display:none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <!-- 🖼️ LOGO DEL HEADER: icono RedZone Edge (redzoneedge-icon.png junto a index.html) -->
+      <a href="#inicio" class="logo"><img src="redzoneedge-icon.png" alt="RedZone Edge" class="logo-img"> RedZone <span>Edge</span></a>
+      <nav class="nav-links">
+        <a href="#incluye" data-en="What's included" data-es="Qué incluye">Qué incluye</a>
+        <a href="#como" data-en="How it works" data-es="Cómo funciona">Cómo funciona</a>
+        <a href="#precios" data-en="Pricing" data-es="Precios">Precios</a>
+        <a href="#espera" data-en="Join the waitlist" data-es="Lista de espera">Lista de espera</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-toggle" id="langToggle">
+          <button id="btnEs" class="active" onclick="setLang('es')">ES</button>
+          <button id="btnEn" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#precios" class="btn btn-verde" data-en="Subscribe" data-es="Suscribirse">Suscribirse</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ⚠️ COUNTDOWN: por defecto cuenta 5 días desde que se abre. Para fijar el kickoff
+       real, cambia la fecha en la constante "SEASON_START" dentro del <script>. -->
+  <div class="countdown-band">
+    <span class="lbl" data-en="Season starts in" data-es="La temporada empieza en">La temporada empieza en</span>
+    <span class="cd" id="cdD">0</span><span data-en="days" data-es="días">días</span>
+    <span class="cd" id="cdH">0</span><span data-en="hrs" data-es="hrs">hrs</span>
+    <span class="cd" id="cdM">0</span><span>min</span>
+    <span class="cd" id="cdS">0</span><span>seg</span>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="badge"><i class="fa-solid fa-bolt"></i> <span data-en="All the NFL info you need, in one place" data-es="Toda la info NFL que necesitas, en un solo lugar">Toda la info NFL que necesitas, en un solo lugar</span></span>
+        <h1 data-en="Stop hunting stats. <em>Start betting smarter.</em>" data-es="Deja de buscar stats. <em>Empieza a apostar mejor.</em>">Deja de buscar stats. <em>Empieza a apostar mejor.</em></h1>
+        <p class="sub" data-en="Each week we compile the key stats, injuries, odds and trends for every NFL game — and add a clear analysis with a suggested bet. You read one page and decide in minutes." data-es="Cada semana reunimos las estadísticas, lesionados, cuotas y tendencias clave de cada partido de la NFL — y añadimos un análisis claro con una apuesta sugerida. Lees una página y decides en minutos.">Cada semana reunimos las estadísticas, lesionados, cuotas y tendencias clave de cada partido de la NFL — y añadimos un análisis claro con una apuesta sugerida. Lees una página y decides en minutos.</p>
+        <div class="hero-cta">
+          <a href="#espera" class="btn btn-verde"><i class="fa-solid fa-bolt"></i> <span data-en="Get my edge" data-es="Consigue mi ventaja">Consigue mi ventaja</span></a>
+          <a href="#incluye" class="btn btn-borde" data-en="See what's included" data-es="Ver qué incluye">Ver qué incluye</a>
+        </div>
+        <div class="hero-confianza">
+          <span><i class="fa-solid fa-circle-check"></i> <span data-en="Game-by-game analysis" data-es="Análisis partido a partido">Análisis partido a partido</span></span>
+          <span><i class="fa-solid fa-circle-check"></i> <span data-en="Injury updates" data-es="Actualización de lesionados">Actualización de lesionados</span></span>
+          <span><i class="fa-solid fa-circle-check"></i> <span data-en="Best line comparison" data-es="Comparación de la mejor cuota">Comparación de la mejor cuota</span></span>
+        </div>
+      </div>
+
+      <!-- Mock del "análisis" que recibiría el suscriptor -->
+      <div class="mock reveal">
+        <span class="tag" data-en="SAMPLE ANALYSIS" data-es="EJEMPLO DE ANÁLISIS">EJEMPLO DE ANÁLISIS</span>
+        <h3 data-en="Chiefs vs Bills" data-es="Chiefs vs Bills">Chiefs vs Bills</h3>
+        <div class="matchup" data-en="Week 12 · Arrowhead Stadium" data-es="Semana 12 · Arrowhead Stadium">Semana 12 · Arrowhead Stadium</div>
+        <div class="row"><span class="lbl" data-en="Key injuries" data-es="Lesionados clave">Lesionados clave</span><b data-en="2 starters out" data-es="2 titulares fuera">2 titulares fuera</b></div>
+        <div class="row"><span class="lbl" data-en="Best line" data-es="Mejor cuota">Mejor cuota</span><b data-en="KC -4.5 (-110)" data-es="KC -4.5 (-110)">KC -4.5 (-110)</b></div>
+        <div class="row"><span class="lbl" data-en="Trend" data-es="Tendencia">Tendencia</span><b data-en="Over 72% last 6" data-es="Over 72% últimos 6">Over 72% últimos 6</b></div>
+        <div class="pick">
+          <div class="lab" data-en="SUGGESTED PLAY" data-es="APUESTA SUGERIDA">APUESTA SUGERIDA</div>
+          <div class="val" data-en="Chiefs -4.5 · 2 units" data-es="Chiefs -4.5 · 2 unidades">Chiefs -4.5 · 2 unidades</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUÉ INCLUYE ============ -->
+  <section class="seccion" id="incluye">
+    <div class="container">
+      <div class="head reveal">
+        <span class="etiqueta" data-en="What you get" data-es="Qué obtienes">Qué obtienes</span>
+        <h2 data-en="Everything to make the call in one page" data-es="Todo para decidir en una sola página">Todo para decidir en una sola página</h2>
+        <p data-en="No more opening 10 tabs. Every NFL game, summarized with a clear recommendation." data-es="Se acabó abrir 10 pestañas. Cada partido de la NFL, resumido con una recomendación clara.">Se acabó abrir 10 pestañas. Cada partido de la NFL, resumido con una recomendación clara.</p>
+      </div>
+
+      <div class="grid-features">
+        <div class="feat reveal">
+          <div class="icono g"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 data-en="Picks with reasoning" data-es="Picks con argumentos">Picks con argumentos</h3>
+          <p data-en="Winner, spread and over/under for every game — each backed by why." data-es="Ganador, spread y over/under de cada partido, cada uno con su porqué.">Ganador, spread y over/under de cada partido, cada uno con su porqué.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icono d"><i class="fa-solid fa-briefcase-medical"></i></div>
+          <h3 data-en="Injuries & lineups" data-es="Lesionados y alineaciones">Lesionados y alineaciones</h3>
+          <p data-en="Who's in, who's out, and how it really affects the matchup." data-es="Quién juega, quién no, y cómo impacta de verdad en el partido.">Quién juega, quién no, y cómo impacta de verdad en el partido.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icono g"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h3 data-en="Odds comparison" data-es="Comparación de cuotas">Comparación de cuotas</h3>
+          <p data-en="We find the best line across sportsbooks so you get the most value." data-es="Encontramos la mejor línea entre casas de apuestas para que aproveches al máximo.">Encontramos la mejor línea entre casas de apuestas para que aproveches al máximo.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icono d"><i class="fa-solid fa-arrows-to-circle"></i></div>
+          <h3 data-en="Suggested parlays" data-es="Parlays sugeridos">Parlays sugeridos</h3>
+          <p data-en="Combined bets with each leg explained, when they make sense." data-es="Combinadas con cada pata explicada, cuando tienen sentido.">Combinadas con cada pata explicada, cuando tienen sentido.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icono g"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 data-en="Trends & key stats" data-es="Tendencias y stats clave">Tendencias y stats clave</h3>
+          <p data-en="Recent form, head-to-head, weather and the numbers that matter." data-es="Forma reciente, duelos directos, clima y los números que importan.">Forma reciente, duelos directos, clima y los números que importan.</p>
+        </div>
+        <div class="feat reveal">
+          <div class="icono d"><i class="fa-solid fa-brain"></i></div>
+          <h3 data-en="AI analysis + a play" data-es="Análisis IA + una apuesta">Análisis IA + una apuesta</h3>
+          <p data-en="The bottom line: a clear summary with a suggested bet and risk level." data-es="El resumen final: un análisis claro con una apuesta sugerida y su nivel de riesgo.">El resumen final: un análisis claro con una apuesta sugerida y su nivel de riesgo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO FUNCIONA ============ -->
+  <section class="seccion" id="como">
+    <div class="container">
+      <div class="head reveal">
+        <span class="etiqueta" data-en="How it works" data-es="Cómo funciona">Cómo funciona</span>
+        <h2 data-en="Your weekly edge, in 3 steps" data-es="Tu ventaja semanal, en 3 pasos">Tu ventaja semanal, en 3 pasos</h2>
+      </div>
+      <div class="pasos">
+        <div class="paso reveal">
+          <div class="num">1</div>
+          <h3 data-en="We gather" data-es="Recopilamos">Recopilamos</h3>
+          <p data-en="Our system pulls stats, injuries and odds from reliable sources." data-es="Nuestro sistema extrae estadísticas, lesionados y cuotas de fuentes fiables.">Nuestro sistema extrae estadísticas, lesionados y cuotas de fuentes fiables.</p>
+        </div>
+        <div class="paso reveal">
+          <div class="num">2</div>
+          <h3 data-en="We analyze" data-es="Analizamos">Analizamos</h3>
+          <p data-en="AI + expert review turn the data into a clear, honest summary." data-es="La IA + revisión experta convierten los datos en un resumen claro y honesto.">La IA + revisión experta convierten los datos en un resumen claro y honesto.</p>
+        </div>
+        <div class="paso reveal">
+          <div class="num">3</div>
+          <h3 data-en="You decide" data-es="Tú decides">Tú decides</h3>
+          <p data-en="Read one page per game, with a suggested play and its risk. You stay in control." data-es="Lee una página por partido, con una apuesta sugerida y su riesgo. Siempre decides tú.">Lee una página por partido, con una apuesta sugerida y su riesgo. Siempre decides tú.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRECIOS ============ -->
+  <section class="seccion" id="precios">
+    <div class="container">
+      <div class="head reveal">
+        <span class="etiqueta" data-en="Pricing" data-es="Precios">Precios</span>
+        <h2 data-en="Simple plans, real value" data-es="Planes sencillos, valor real">Planes sencillos, valor real</h2>
+        <p data-en="Cancel anytime. No hidden fees." data-es="Cancela cuando quieras. Sin costes ocultos.">Cancela cuando quieras. Sin costes ocultos.</p>
+      </div>
+
+      <div class="grid-precios" style="max-width:440px;">
+        <!-- 💰 PLAN ÚNICO: MENSUAL ($9.99) -->
+        <div class="plan destacado reveal">
+          <span class="etiqueta-plan" data-en="BEST VALUE" data-es="MEJOR VALOR">MEJOR VALOR</span>
+          <h3 data-en="Monthly" data-es="Mensual">Mensual</h3>
+          <div class="precio">$9.99 <small>USD<span data-en="/month" data-es="/mes">/mes</span></small></div>
+          <p class="nota" data-en="Everything you need, every week of the season." data-es="Todo lo que necesitas, cada semana de la temporada.">Todo lo que necesitas, cada semana de la temporada.</p>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> <span data-en="Full NFL analysis" data-es="Análisis NFL completo">Análisis NFL completo</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-en="Stats, injuries, odds & trends" data-es="Stats, lesionados, cuotas y tendencias">Stats, lesionados, cuotas y tendencias</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-en="Suggested pick + risk level" data-es="Pick sugerido + nivel de riesgo">Pick sugerido + nivel de riesgo</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-en="English & Spanish" data-es="Inglés y español">Inglés y español</span></li>
+          </ul>
+          <!-- 💳 PAGO MENSUAL $9.99 — Gumroad -->
+          <a href="https://quintero236.gumroad.com/l/xrwvr" target="_blank" rel="noopener" class="btn btn-verde" data-en="Subscribe for $9.99/mo" data-es="Suscribirme por $9.99/mes">Suscribirme por $9.99/mes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="seccion" id="faq">
+    <div class="container">
+      <div class="head reveal">
+        <span class="etiqueta" data-en="FAQ" data-es="Preguntas">Preguntas</span>
+        <h2 data-en="Common questions" data-es="Preguntas frecuentes">Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary data-en="What do I get with a subscription?" data-es="¿Qué recibo con la suscripción?">¿Qué recibo con la suscripción?</summary>
+          <div class="resp" data-en="Each week you get the full analysis of every NFL game: key stats, injuries, odds, trends plus a clear summary with a suggested play." data-es="Cada semana recibes el análisis completo de cada partido de la NFL: estadísticas clave, lesionados, cuotas, tendencias y un resumen claro con una apuesta sugerida.">Cada semana recibes el análisis completo de cada partido de la NFL: estadísticas clave, lesionados, cuotas, tendencias y un resumen claro con una apuesta sugerida.</div>
+        </details>
+        <details>
+          <summary data-en="Is this betting advice?" data-es="¿Es consejo de apuestas?">¿Es consejo de apuestas?</summary>
+          <div class="resp" data-en="No. We provide informational analysis to help you decide. The final decision is always yours — bet responsibly." data-es="No. Ofrecemos análisis informativo para ayudarte a decidir. La decisión final siempre es tuya — apuesta con responsabilidad.">No. Ofrecemos análisis informativo para ayudarte a decidir. La decisión final siempre es tuya — apuesta con responsabilidad.</div>
+        </details>
+        <details>
+          <summary data-en="How do I pay?" data-es="¿Cómo pago?">¿Cómo pago?</summary>
+          <div class="resp" data-en="By card via Whop, or with crypto (USDT/BTC). You choose at checkout." data-es="Con tarjeta a través de Whop, o con cripto (USDT/BTC). Tú eliges al pagar.">Con tarjeta a través de Whop, o con cripto (USDT/BTC). Tú eliges al pagar.</div>
+        </details>
+        <details>
+          <summary data-en="Can I cancel anytime?" data-es="¿Puedo cancelar cuando quiera?">¿Puedo cancelar cuando quiera?</summary>
+          <div class="resp" data-en="Yes. Cancel in one click, no questions asked." data-es="Sí. Cancela con un clic, sin preguntas.">Sí. Cancela con un clic, sin preguntas.</div>
+        </details>
+        <details>
+          <summary data-en="What language is it in?" data-es="¿En qué idioma está?">¿En qué idioma está?</summary>
+          <div class="resp" data-en="English and Spanish. Switch anytime with the EN/ES toggle." data-es="Inglés y español. Cambia cuando quieras con el selector EN/ES.">Inglés y español. Cambia cuando quieras con el selector EN/ES.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LISTA DE ESPERA ============ -->
+  <section class="seccion" id="espera">
+    <div class="container">
+      <div class="caja-espera reveal">
+        <h2 data-en="Join the waitlist" data-es="Únete a la lista de espera">Únete a la lista de espera</h2>
+        <p data-en="We launch before the first game of the season. Get early access + a founding-member discount." data-es="Lanzamos antes del primer partido de la temporada. Consigue acceso anticipado + descuento de miembro fundador.">Lanzamos antes del primer partido de la temporada. Consigue acceso anticipado + descuento de miembro fundador.</p>
+
+        <form class="form-espera" id="formEspera" novalidate>
+          <input type="email" id="emailEspera" placeholder="tu@email.com" aria-label="Email" autocomplete="email">
+          <button type="submit" class="btn btn-dorado"><i class="fa-solid fa-envelope"></i> <span data-en="Notify me" data-es="Avísame">Avísame</span></button>
+        </form>
+        <div class="msg-error" id="msgErrorEspera" data-en="Please enter a valid email." data-es="Por favor escribe un correo válido.">Por favor escribe un correo válido.</div>
+        <div class="msg-ok" id="msgOkEspera" data-en="🎉 You're on the list! We'll email you at launch." data-es="🎉 ¡Estás en la lista! Te avisaremos por correo en el lanzamiento.">🎉 ¡Estás en la lista! Te avisaremos por correo en el lanzamiento.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <!-- ⚠️ NOMBRE DE MARCA (repetido) -->
+      <div>
+        <div class="logo"><img src="redzoneedge-icon.png" alt="RedZone Edge" class="logo-img"> RedZone <span>Edge</span></div>
+        <p data-en="One-page NFL analysis so you can bet smarter, not harder." data-es="Análisis NFL en una sola página para que apuestes mejor, no más.">Análisis NFL en una sola página para que apuestes mejor, no más.</p>
+        <div class="footer-contacto" style="margin-top:14px;">
+          <li><i class="fa-solid fa-envelope"></i> hola@redzoneedge.com</li>
+          <li><i class="fa-brands fa-telegram"></i> @redzone_edge</li>
+        </div>
+        <!-- 📱 REDES: Instagram ya conectado a @redzoneedge. Cambia los placeholders de X/YouTube por tus perfiles reales -->
+        <div class="footer-redes">
+          <a href="https://instagram.com/redzoneedge" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/TU_PERFIL" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://youtube.com/@TU_PERFIL" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-en="Quick links" data-es="Enlaces rápidos">Enlaces rápidos</h4>
+        <ul class="footer-enlaces">
+          <li><a href="#incluye" data-en="What's included" data-es="Qué incluye">Qué incluye</a></li>
+          <li><a href="#como" data-en="How it works" data-es="Cómo funciona">Cómo funciona</a></li>
+          <li><a href="#precios" data-en="Pricing" data-es="Precios">Precios</a></li>
+          <li><a href="#espera" data-en="Waitlist" data-es="Lista de espera">Lista de espera</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-en="Legal" data-es="Legal">Legal</h4>
+        <ul class="footer-enlaces">
+          <li><a href="#" data-en="Terms of use" data-es="Términos de uso">Términos de uso</a></li>
+          <li><a href="#" data-en="Privacy policy" data-es="Política de privacidad">Política de privacidad</a></li>
+          <li><a href="#" data-en="Responsible gambling" data-es="Juego responsable">Juego responsable</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <div class="container">
+        <span data-en="DISCLAIMER: RedZone Edge provides informational sports analysis for educational purposes. It is NOT gambling advice and does not guarantee wins. Bet only what you can afford to lose. You must be 21+ to gamble in the US and 18+ in most other markets. Always bet responsibly." data-es="AVISO: RedZone Edge ofrece análisis deportivo informativo con fines educativos. NO es consejo de apuestas y no garantiza ganancias. Apuesta solo lo que puedas permitirte perder. Debes tener 21+ para apostar en EE. UU. y 18+ en la mayoría de otros mercados. Apuesta siempre con responsabilidad.">AVISO: RedZone Edge ofrece análisis deportivo informativo con fines educativos. NO es consejo de apuestas y no garantiza ganancias. Apuesta solo lo que puedas permitirte perder. Debes tener 21+ para apostar en EE. UU. y 18+ en la mayoría de otros mercados. Apuesta siempre con responsabilidad.</span>
+      </div>
+    </div>
+
+    <div class="footer-bajo">
+      <div class="container">© <span id="anio"></span> RedZone Edge · <span data-en="All rights reserved" data-es="Todos los derechos reservados">Todos los derechos reservados</span></div>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       ⚙️ CONFIGURACIÓN
+       ============================================================ */
+
+    /* ⚠️ 1) EMAILJS — para la lista de espera
+       -----------------------------------------
+       Registro gratis en https://www.emailjs.com
+       1) Email Services → Add New Service (elige Gmail). Copia SERVICE_ID.
+       2) Email Templates → Create New Template:
+          Asunto: "Nuevo suscriptor RedZone Edge"
+          Contenido: "Email: {{email}}"
+          Copia TEMPLATE_ID.
+       3) Account → API Keys → copia PUBLIC_KEY.
+       Pega los 3 valores abajo.  */
+    const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY_AQUI";
+    const EMAILJS_SERVICE_ID = "TU_SERVICE_ID_AQUI";
+    const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID_AQUI";
+
+    /* ============================================================
+       🌐 SELECTOR DE IDIOMA EN/ES
+       ============================================================ */
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var txt = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-es');
+        el.innerHTML = txt;   // innerHTML para que <em> (y otras) se rendericen, no se muestren como texto
+      });
+      document.documentElement.lang = lang;
+      document.getElementById('btnEs').classList.toggle('active', lang === 'es');
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+    }
+    document.getElementById('btnEs').addEventListener('click', function () { setLang('es'); });
+    document.getElementById('btnEn').addEventListener('click', function () { setLang('en'); });
+
+    /* ============================================================
+       📌 Año automático
+       ============================================================ */
+    document.getElementById('anio').textContent = new Date().getFullYear();
+
+    /* ============================================================
+       ⏳ CUENTA REGRESIVA AL ARRANQUE
+       ⚠️ Cambia la fecha/hora real del primer partido (deja la línea
+       comentada o reemplaza por tu kickoff). Por defecto: 5 días.
+       ============================================================ */
+    var SEASON_START = new Date();
+    SEASON_START.setDate(SEASON_START.getDate() + 5);   // ⚠️ sustituye por la fecha real, ej: new Date('2026-09-10T20:15:00')
+    function actualizarCuenta() {
+      var diff = SEASON_START - new Date();
+      if (diff < 0) diff = 0;
+      document.getElementById('cdD').textContent = Math.floor(diff / 86400000);
+      document.getElementById('cdH').textContent = Math.floor((diff % 86400000) / 3600000);
+      document.getElementById('cdM').textContent = Math.floor((diff % 3600000) / 60000);
+      document.getElementById('cdS').textContent = Math.floor((diff % 60000) / 1000);
+    }
+    actualizarCuenta();
+    setInterval(actualizarCuenta, 1000);
+
+    /* ============================================================
+       ✨ Animaciones al hacer scroll
+       ============================================================ */
+    const obs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+
+    /* ============================================================
+       📩 LISTA DE ESPERA — validación + envío
+       ============================================================ */
+    const formEspera = document.getElementById('formEspera');
+    const inputEmail = document.getElementById('emailEspera');
+    const msgError = document.getElementById('msgErrorEspera');
+    const msgOk = document.getElementById('msgOkEspera');
+
+    formEspera.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msgOk.classList.remove('visible');
+      msgError.classList.remove('visible');
+      inputEmail.classList.remove('error');
+
+      const email = inputEmail.value.trim();
+      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!regexEmail.test(email)) {
+        msgError.classList.add('visible');
+        inputEmail.classList.add('error');
+        return;
+      }
+
+      /* Si no has configurado EmailJS aún, avisamos con el formato correcto */
+      if (EMAILJS_PUBLIC_KEY.indexOf("TU_") === 0) {
+        msgOk.textContent = "✅ " + (document.documentElement.lang === 'en' ? "This is a demo. Configure EmailJS to save emails (see instructions in the code)." : "Esto es una demo. Configura EmailJS para guardar correos (mira las instrucciones en el código).");
+        msgOk.classList.add('visible');
+        inputEmail.value = '';
+        return;
+      }
+
+      /* Estado "enviando" */
+      const btn = formEspera.querySelector('button');
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ...';
+
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, { email: email })
+        .then(function () {
+          msgOk.textContent = document.documentElement.lang === 'en' ? "🎉 You're on the list!" : "🎉 ¡Estás en la lista!";
+          msgOk.classList.add('visible');
+          inputEmail.value = '';
+          btn.disabled = false;
+          btn.innerHTML = original;
+        })
+        .catch(function (err) {
+          console.error(err);
+          alert(document.documentElement.lang === 'en' ? "Something went wrong. Try again or DM us." : "Algo salió mal. Inténtalo de nuevo o escríbenos.");
+          btn.disabled = false;
+          btn.innerHTML = original;
+        });
+    });
+  </script>
+</body>
+</html>
