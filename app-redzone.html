@@ -64,6 +64,14 @@
   .chip.r{background:rgba(229,72,77,.12);color:var(--rojo);border:1px solid rgba(229,72,77,.35)}
   .odt.act{background:var(--verde);color:#07130B}
   .chip.n{background:var(--bg);color:var(--texto-suave);border:1px solid var(--borde)}
+  .fsec{background:var(--card);border-top:1px solid var(--borde)}
+  .fsec summary{list-style:none;cursor:pointer;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;font-family:'Poppins';font-weight:700;font-size:13.5px;color:var(--verde)}
+  .fsec summary::-webkit-details-marker{display:none}
+  .fsec summary .chev{color:var(--texto-suave);transition:.25s}
+  .fsec[open] summary .chev{transform:rotate(180deg)}
+  .fsec .body{padding:0 18px 14px}
+  .fila{display:flex;gap:9px;font-size:13px;color:var(--texto-suave);margin-bottom:6px}
+  .fila i{color:var(--dorado)}
   .premium{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--dorado);border-radius:18px;padding:22px;text-align:center;margin-top:22px}
   .premium .t{font-family:'Poppins';font-size:20px;color:var(--dorado);margin-bottom:6px}
   .premium p{color:var(--texto-suave);font-size:14px;margin-bottom:16px}
@@ -235,19 +243,37 @@
         var probA=ml.away?ml.away.prob:0, probH=ml.home?ml.home.prob:0;
         var fav = probA>=probH ? f.away : f.home, favProb = Math.max(probA,probH);
         var dog = fav===f.away ? f.home : f.away;
-        var favPrice = (fav===f.away?ml.away:ml.home)?.price;
-        var dogPrice = (dog===f.away?ml.away:ml.home)?.price;
+        var awayPrice = ml.away?ml.away.price:null, homePrice = ml.home?ml.home.price:null;
         var sp=(f.odds&&f.odds.spread)||{};
         var spNeg = (sp.away<0) ? f.home : f.away;
         var total=(f.odds&&f.odds.total)?f.odds.total.over:'';
+        var w = f.weather;
+        var clim = w ? ('Temperatura '+w.temp+'°C · Viento '+w.wind+' km/h · Lluvia '+w.rain+' mm') : 'Clima: n/d';
         html += '<div class="game">'+
           '<div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.away)+'.png"> '+f.away+' <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.home)+'.png"> '+f.home+'</div><div class="meta">'+(f.commence_time?fmtTime(f.commence_time):f.fecha)+'<br><b style="color:var(--dorado)">'+(f.venue||'')+'</b></div></div>'+
-          '<div class="sec"><div class="chips">'+
-            '<span class="chip v">▲ '+fav+' '+fmtOdds(favPrice)+' · '+favProb.toFixed(1)+'%</span>'+
-            '<span class="chip r">▼ '+dog+' '+fmtOdds(dogPrice)+' · '+(100-favProb).toFixed(1)+'%</span>'+
+
+
+          '<details class="fsec" open><summary>💰 Cuotas <span class="chev">▼</span></summary><div class="body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">'+
+            '<div style="background:var(--bg);border-radius:10px;padding:10px;text-align:center"><div style="font-size:11px;color:var(--texto-suave)">ML '+f.away+'</div><div style="font-family:Poppins;font-weight:800;font-size:17px">'+fmtOdds(awayPrice)+'</div><div style="font-size:11px;color:var(--texto-suave)">'+probA.toFixed(1)+'%</div></div>'+
+            '<div style="background:var(--bg);border-radius:10px;padding:10px;text-align:center"><div style="font-size:11px;color:var(--texto-suave)">Spread</div><div style="font-family:Poppins;font-weight:800;font-size:17px;color:var(--dorado)">'+spNeg+' '+Math.abs(sp.away||0)+'</div><div style="font-size:11px;color:var(--texto-suave)">Total '+total+'</div></div>'+
+            '<div style="background:var(--bg);border-radius:10px;padding:10px;text-align:center"><div style="font-size:11px;color:var(--texto-suave)">ML '+f.home+'</div><div style="font-family:Poppins;font-weight:800;font-size:17px">'+fmtOdds(homePrice)+'</div><div style="font-size:11px;color:var(--texto-suave)">'+probH.toFixed(1)+'%</div></div>'+
+          '</div></details>'+
+
+          '<details class="fsec" open><summary>🧩 Patrones <span class="chev">▼</span></summary><div class="body"><div class="chips">'+
+            '<span class="chip v">▲ '+fav+' · '+favProb.toFixed(1)+'%</span>'+
+            '<span class="chip r">▼ '+dog+' · '+(100-favProb).toFixed(1)+'%</span>'+
             '<span class="chip n">Spread '+spNeg+' '+Math.abs(sp.away||0)+'</span>'+
             '<span class="chip n">Total '+total+'</span>'+
-          '</div></div></div>';
+          '</div></div></details>'+
+
+          '<details class="fsec" open><summary>🏟️ Situacional <span class="chev">▼</span></summary><div class="body">'+
+            '<div class="fila">🏟️ Sede: <b>'+ (f.venue||'—') +'</b></div>'+
+            '<div class="fila">🌦️ '+clim+'</div>'+
+          '</div></details>'+
+
+          '<details class="fsec"><summary>⚔️ Unidad vs Unidad <span class="chev">▼</span></summary><div class="body"><p style="font-size:12.5px;color:var(--texto-suave)">Se activa con la API de datos avanzados (sportsdata). Próximamente.</p></div></details>'+
+          '<details class="fsec"><summary>🚑 Lesiones <span class="chev">▼</span></summary><div class="body"><p style="font-size:12.5px;color:var(--texto-suave)">Dato en desarrollo.</p></div></details>'+
+        '</div>';
       });
       grid.innerHTML = html;
     }catch(e){ grid.innerHTML = '<div style="color:var(--texto-suave);padding:20px">No se pudieron cargar las fichas.</div>'; }
