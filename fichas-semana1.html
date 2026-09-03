@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedZone Edge — Fichas Semana 1</title><link rel="icon" href="redzoneedge-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A101F;--card:#121C33;--card2:#1A2647;--borde:rgba(255,255,255,.08);--verde:#22C55E;--rojo:#E5484D;--dorado:#F5B70A;--texto:#EDF2F7;--texto-suave:#9FB0C7;--blanco:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--texto);line-height:1.5;padding:0 0 50px}
+.marco{max-width:1000px;margin:0 auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--borde);margin-bottom:18px}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:800;font-size:21px;color:#fff}
+.logo img{width:40px;height:40px;border-radius:10px}.logo span{color:var(--verde)}
+h1{font-family:'Poppins';font-size:26px;color:#fff;margin-bottom:4px}
+.sub{color:var(--texto-suave);font-size:14px;margin-bottom:20px}
+.stats{background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:14px 20px;margin-bottom:24px;font-size:13px;color:var(--texto-suave)}
+.stats b{color:var(--verde)}
+.game{background:var(--card);border:1px solid var(--borde);border-radius:18px;margin-bottom:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.game-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:var(--card2)}
+.teams{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:800;color:#fff;font-size:16px}
+.teams img{width:30px;height:30px}
+.teams .vs{color:var(--texto-suave);font-weight:600;font-size:12px}
+.game-head .meta{text-align:right;font-size:11.5px;color:var(--texto-suave)}
+details.sec{background:var(--card);border-top:1px solid var(--borde)}
+summary.sec-head{cursor:pointer;list-style:none;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;font-family:'Poppins';font-weight:700;font-size:14px;color:var(--verde)}
+summary.sec-head::-webkit-details-marker{display:none}
+summary.sec-head .chev{color:var(--texto-suave);transition:.25s}
+details[open] summary.sec-head .chev{transform:rotate(180deg)}
+.sec-body{padding:0 18px 16px}
+.odds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.odd{background:var(--bg);border-radius:12px;padding:11px;text-align:center}
+.odd .lab{font-size:11px;color:var(--texto-suave)}
+.odd .val{font-family:'Poppins';font-weight:800;font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12.5px;font-weight:600;padding:8px 12px;border-radius:11px;display:inline-flex;gap:6px;align-items:center}
+.chip.v{background:rgba(34,197,94,.14);color:var(--verde);border:1px solid rgba(34,197,94,.4)}
+.chip.r{background:rgba(229,72,77,.12);color:var(--rojo);border:1px solid rgba(229,72,77,.35)}
+.chip.n{background:var(--bg);color:var(--texto-suave);border:1px solid var(--borde)}
+.fila{display:flex;gap:9px;font-size:13.5px;margin-bottom:7px;color:var(--texto-suave)}
+.fila i{color:var(--dorado)}
+</style></head><body><div class="marco">
+<header><a href="index.html" class="logo"><img src="redzoneedge-icon.png" alt=""> RedZone <span>Edge</span></a><span style="background:var(--dorado);color:#201500;font-weight:700;font-size:12px;padding:6px 14px;border-radius:20px">SEMANA 1 · datos reales</span></header>
+<h1>📊 Fichas — Semana 1</h1>
+<div class="sub">Datos reales: cuotas + probabilidades + sedes. Patrones por margen de probabilidad.</div>
+<div class="stats">🎯 <b>17 partidos</b> · Cuotas de <b>the-odds-api</b> · Fuente de escenarios: probabilidad implícita.</div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/NE.png"> New England Patriots <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/SEA.png"> Seattle Seahawks</div>
+      <div class="meta">9/9/2026<br><b style="color:var(--dorado)">Lumen Field</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML New England Patriots</div><div class="val">2.45</div><div class="lab">40.8%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">New England Patriots 3.5</div><div class="lab">Total 44.5</div></div>
+      <div class="odd"><div class="lab">ML Seattle Seahawks</div><div class="val">1.57</div><div class="lab">63.7%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Seattle Seahawks ML · 63.7%</span>
+      <span class="chip n">▼ New England Patriots · 36.3%</span>
+      <span class="chip v">▲ New England Patriots 3.5</span>
+      <span class="chip n">Total 44.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Lumen Field</b></div>
+      <div class="fila">🌦️ Temperatura 14°C · Viento 9 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/SF.png"> San Francisco 49ers <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/LAR.png"> Los Angeles Rams</div>
+      <div class="meta">10/9/2026<br><b style="color:var(--dorado)">Melbourne Cricket Ground</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML San Francisco 49ers</div><div class="val">2.64</div><div class="lab">37.9%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">San Francisco 49ers 3.5</div><div class="lab">Total 48.5</div></div>
+      <div class="odd"><div class="lab">ML Los Angeles Rams</div><div class="val">1.51</div><div class="lab">66.2%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Los Angeles Rams ML · 66.2%</span>
+      <span class="chip n">▼ San Francisco 49ers · 33.8%</span>
+      <span class="chip v">▲ San Francisco 49ers 3.5</span>
+      <span class="chip n">Total 48.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Melbourne Cricket Ground</b></div>
+      <div class="fila">🌦️ Temperatura 16°C · Viento 16 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ATL.png"> Atlanta Falcons <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/PIT.png"> Pittsburgh Steelers</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Acrisure Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Atlanta Falcons</div><div class="val">2.54</div><div class="lab">39.4%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Atlanta Falcons 3.5</div><div class="lab">Total 42.5</div></div>
+      <div class="odd"><div class="lab">ML Pittsburgh Steelers</div><div class="val">1.54</div><div class="lab">64.9%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Pittsburgh Steelers ML · 64.9%</span>
+      <span class="chip n">▼ Atlanta Falcons · 35.1%</span>
+      <span class="chip v">▲ Atlanta Falcons 3.5</span>
+      <span class="chip n">Total 42.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Acrisure Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 27°C · Viento 12 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/BAL.png"> Baltimore Ravens <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/IND.png"> Indianapolis Colts</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Lucas Oil Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Baltimore Ravens</div><div class="val">1.57</div><div class="lab">63.7%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Indianapolis Colts 3.5</div><div class="lab">Total 48.5</div></div>
+      <div class="odd"><div class="lab">ML Indianapolis Colts</div><div class="val">2.45</div><div class="lab">40.8%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Baltimore Ravens ML · 63.7%</span>
+      <span class="chip n">▼ Indianapolis Colts · 36.3%</span>
+      <span class="chip v">▲ Indianapolis Colts 3.5</span>
+      <span class="chip n">Total 48.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Lucas Oil Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 29°C · Viento 7 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/BUF.png"> Buffalo Bills <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/HOU.png"> Houston Texans</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Reliant Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Buffalo Bills</div><div class="val">1.85</div><div class="lab">54.1%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Houston Texans 1.5</div><div class="lab">Total 44.5</div></div>
+      <div class="odd"><div class="lab">ML Houston Texans</div><div class="val">1.98</div><div class="lab">50.5%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Buffalo Bills ML · 54.1%</span>
+      <span class="chip n">▼ Houston Texans · 45.9%</span>
+      <span class="chip v">▲ Houston Texans 1.5</span>
+      <span class="chip n">Total 44.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Reliant Stadium</b></div>
+      <div class="fila">🌦️ Clima: n/d</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/CHI.png"> Chicago Bears <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/CAR.png"> Carolina Panthers</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Bank of America Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Chicago Bears</div><div class="val">1.62</div><div class="lab">61.7%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Carolina Panthers 2.5</div><div class="lab">Total 47.5</div></div>
+      <div class="odd"><div class="lab">ML Carolina Panthers</div><div class="val">2.36</div><div class="lab">42.4%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Chicago Bears ML · 61.7%</span>
+      <span class="chip n">▼ Carolina Panthers · 38.3%</span>
+      <span class="chip v">▲ Carolina Panthers 2.5</span>
+      <span class="chip n">Total 47.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Bank of America Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 26°C · Viento 6 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/TB.png"> Tampa Bay Buccaneers <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/CIN.png"> Cincinnati Bengals</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Paycor Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Tampa Bay Buccaneers</div><div class="val">2.64</div><div class="lab">37.9%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Tampa Bay Buccaneers 3.5</div><div class="lab">Total 50.5</div></div>
+      <div class="odd"><div class="lab">ML Cincinnati Bengals</div><div class="val">1.51</div><div class="lab">66.2%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Cincinnati Bengals ML · 66.2%</span>
+      <span class="chip n">▼ Tampa Bay Buccaneers · 33.8%</span>
+      <span class="chip v">▲ Tampa Bay Buccaneers 3.5</span>
+      <span class="chip n">Total 50.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Paycor Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 26°C · Viento 3 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/CLE.png"> Cleveland Browns <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/JAX.png"> Jacksonville Jaguars</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">EverBank Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Cleveland Browns</div><div class="val">4.1</div><div class="lab">24.4%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Cleveland Browns 7.5</div><div class="lab">Total 40.5</div></div>
+      <div class="odd"><div class="lab">ML Jacksonville Jaguars</div><div class="val">1.25</div><div class="lab">80.0%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Jacksonville Jaguars ML · 80.0%</span>
+      <span class="chip n">▼ Cleveland Browns · 20.0%</span>
+      <span class="chip v">▲ Cleveland Browns 7.5</span>
+      <span class="chip n">Total 40.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>EverBank Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 26°C · Viento 5 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/NO.png"> New Orleans Saints <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/DET.png"> Detroit Lions</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Ford Field</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML New Orleans Saints</div><div class="val">3.4</div><div class="lab">29.4%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">New Orleans Saints 7</div><div class="lab">Total 49.5</div></div>
+      <div class="odd"><div class="lab">ML Detroit Lions</div><div class="val">1.34</div><div class="lab">74.6%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Detroit Lions ML · 74.6%</span>
+      <span class="chip n">▼ New Orleans Saints · 25.4%</span>
+      <span class="chip v">▲ New Orleans Saints 7</span>
+      <span class="chip n">Total 49.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Ford Field</b></div>
+      <div class="fila">🌦️ Temperatura 27°C · Viento 6 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/NYJ.png"> New York Jets <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/TEN.png"> Tennessee Titans</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Nissan Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML New York Jets</div><div class="val">2.1</div><div class="lab">47.6%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">New York Jets 1.5</div><div class="lab">Total 38.5</div></div>
+      <div class="odd"><div class="lab">ML Tennessee Titans</div><div class="val">1.77</div><div class="lab">56.5%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Tennessee Titans ML · 56.5%</span>
+      <span class="chip n">▼ New York Jets · 43.5%</span>
+      <span class="chip v">▲ New York Jets 1.5</span>
+      <span class="chip n">Total 38.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Nissan Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 29°C · Viento 2 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/ARI.png"> Arizona Cardinals <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/LAC.png"> Los Angeles Chargers</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">SoFi Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Arizona Cardinals</div><div class="val">5.1</div><div class="lab">19.6%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Arizona Cardinals 10.5</div><div class="lab">Total 46.5</div></div>
+      <div class="odd"><div class="lab">ML Los Angeles Chargers</div><div class="val">1.18</div><div class="lab">84.7%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Los Angeles Chargers ML · 84.7%</span>
+      <span class="chip n">▼ Arizona Cardinals · 15.3%</span>
+      <span class="chip v">▲ Arizona Cardinals 10.5</span>
+      <span class="chip n">Total 46.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>SoFi Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 20°C · Viento 6 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/GB.png"> Green Bay Packers <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/MIN.png"> Minnesota Vikings</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">U.S. Bank Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Green Bay Packers</div><div class="val">1.98</div><div class="lab">50.5%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Green Bay Packers 1.5</div><div class="lab">Total 45.5</div></div>
+      <div class="odd"><div class="lab">ML Minnesota Vikings</div><div class="val">1.85</div><div class="lab">54.1%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Minnesota Vikings ML · 54.1%</span>
+      <span class="chip n">▼ Green Bay Packers · 45.9%</span>
+      <span class="chip v">▲ Green Bay Packers 1.5</span>
+      <span class="chip n">Total 45.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>U.S. Bank Stadium</b></div>
+      <div class="fila">🌦️ Clima: n/d</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/MIA.png"> Miami Dolphins <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/LV.png"> Las Vegas Raiders</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Allegiant Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Miami Dolphins</div><div class="val">2.64</div><div class="lab">37.9%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Miami Dolphins 3.5</div><div class="lab">Total 40.5</div></div>
+      <div class="odd"><div class="lab">ML Las Vegas Raiders</div><div class="val">1.51</div><div class="lab">66.2%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Las Vegas Raiders ML · 66.2%</span>
+      <span class="chip n">▼ Miami Dolphins · 33.8%</span>
+      <span class="chip v">▲ Miami Dolphins 3.5</span>
+      <span class="chip n">Total 40.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Allegiant Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 29°C · Viento 18 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/WAS.png"> Washington Commanders <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/PHI.png"> Philadelphia Eagles</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">Lincoln Financial Field</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Washington Commanders</div><div class="val">2.8</div><div class="lab">35.7%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Washington Commanders 5.5</div><div class="lab">Total 45.5</div></div>
+      <div class="odd"><div class="lab">ML Philadelphia Eagles</div><div class="val">1.46</div><div class="lab">68.5%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Philadelphia Eagles ML · 68.5%</span>
+      <span class="chip n">▼ Washington Commanders · 31.5%</span>
+      <span class="chip v">▲ Washington Commanders 5.5</span>
+      <span class="chip n">Total 45.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Lincoln Financial Field</b></div>
+      <div class="fila">🌦️ Temperatura 22°C · Viento 5 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/DAL.png"> Dallas Cowboys <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/NYG.png"> New York Giants</div>
+      <div class="meta">13/9/2026<br><b style="color:var(--dorado)">MetLife Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Dallas Cowboys</div><div class="val">1.68</div><div class="lab">59.5%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">New York Giants 2.5</div><div class="lab">Total 48.5</div></div>
+      <div class="odd"><div class="lab">ML New York Giants</div><div class="val">2.24</div><div class="lab">44.6%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Dallas Cowboys ML · 59.5%</span>
+      <span class="chip n">▼ New York Giants · 40.5%</span>
+      <span class="chip v">▲ New York Giants 2.5</span>
+      <span class="chip n">Total 48.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>MetLife Stadium</b></div>
+      <div class="fila">🌦️ Temperatura 20°C · Viento 6 km/h · Lluvia 0 mm</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/DEN.png"> Denver Broncos <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/KC.png"> Kansas City Chiefs</div>
+      <div class="meta">14/9/2026<br><b style="color:var(--dorado)">Arrowhead Stadium</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Denver Broncos</div><div class="val">2.24</div><div class="lab">44.6%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Denver Broncos 3</div><div class="lab">Total 42.5</div></div>
+      <div class="odd"><div class="lab">ML Kansas City Chiefs</div><div class="val">1.68</div><div class="lab">59.5%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Kansas City Chiefs ML · 59.5%</span>
+      <span class="chip n">▼ Denver Broncos · 40.5%</span>
+      <span class="chip v">▲ Denver Broncos 3</span>
+      <span class="chip n">Total 42.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>Arrowhead Stadium</b></div>
+      <div class="fila">🌦️ Clima: n/d</div>
+    </div></details>
+  </div><div class="game">
+    <div class="game-head">
+      <div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/DET.png"> Detroit Lions <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/BUF.png"> Buffalo Bills</div>
+      <div class="meta">17/9/2026<br><b style="color:var(--dorado)">—</b></div>
+    </div>
+    <details class="sec" open><summary class="sec-head">💰 Cuotas <span class="chev">▼</span></summary><div class="sec-body"><div class="odds">
+      <div class="odd"><div class="lab">ML Detroit Lions</div><div class="val">2.36</div><div class="lab">42.4%</div></div>
+      <div class="odd"><div class="lab">Spread</div><div class="val" style="color:var(--dorado)">Detroit Lions 3</div><div class="lab">Total 52.5</div></div>
+      <div class="odd"><div class="lab">ML Buffalo Bills</div><div class="val">1.62</div><div class="lab">61.7%</div></div>
+    </div></div></details>
+    <details class="sec" open><summary class="sec-head">🧩 Patrones (probabilidad) <span class="chev">▼</span></summary><div class="sec-body"><div class="chips">
+      <span class="chip v">▲ Buffalo Bills ML · 61.7%</span>
+      <span class="chip n">▼ Detroit Lions · 38.3%</span>
+      <span class="chip v">▲ Detroit Lions 3</span>
+      <span class="chip n">Total 52.5</span>
+    </div></div></details>
+    <details class="sec"><summary class="sec-head">⚔️ Unidad vs Unidad · (requiere sportsdata) <span class="chev">▼</span></summary><div class="sec-body"><p style="font-size:13px;color:var(--texto-suave)">Este bloque (EPA, pasadas, rankings) se activa con la API de pago <b>sportsdata.io</b>. Por ahora es un espacio reservado.</p></div></details>
+    <details class="sec" open><summary class="sec-head">🏟️ Situacional <span class="chev">▼</span></summary><div class="sec-body">
+      <div class="fila">🏟️ Sede: <b>—</b></div>
+      <div class="fila">🌦️ Clima: n/d</div>
+    </div></details>
+  </div></div></body></html>
