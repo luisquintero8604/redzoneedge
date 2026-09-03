@@ -31,6 +31,33 @@
       "temp": 14,
       "wind": 14,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "TreVeyon Henderson — Questionable",
+        "Bryce Baringer — Injured Reserve",
+        "Khalil Jacobs — Injured Reserve",
+        "Isaiah Iton — Injured Reserve",
+        "Marcus Bryant — Injured Reserve",
+        "Harold Landry III — Out",
+        "Brenden Schooler — Out",
+        "Myles Montgomery — Injured Reserve"
+      ],
+      "home": [
+        "Amari Kight — Injured Reserve",
+        "Aaron Smith — Injured Reserve",
+        "Power Echols — Injured Reserve",
+        "Irv Charles — Injured Reserve",
+        "Zach Charbonnet — Out",
+        "Terrion Arnold — Out",
+        "Tory Horton — Questionable",
+        "Mason Richman — Injured Reserve",
+        "Bud Clark — Injured Reserve",
+        "Jake Bobo — Injured Reserve",
+        "Emanuel Wilson — Questionable",
+        "Robbie Ouzts — Injured Reserve",
+        "Nick Emmanwori — Questionable"
+      ]
     }
   },
   {
@@ -65,6 +92,41 @@
       "temp": 16,
       "wind": 16,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Kyle Juszczyk — Questionable",
+        "Nick Bosa — Questionable",
+        "Mike Evans — Questionable",
+        "George Kittle — Questionable",
+        "Nick Martin — Injured Reserve",
+        "Nate Hobbs — Injured Reserve",
+        "Brayden Willis — Questionable",
+        "Christian McCaffrey — Questionable",
+        "Nick Zakelj — Injured Reserve",
+        "Brett Toth — Injured Reserve",
+        "Austen Pleasants — Injured Reserve",
+        "Mykel Williams — Out",
+        "Christian Kirk — Injured Reserve",
+        "Isaac Guerendo — Out",
+        "Ephesians Prysock — Questionable",
+        "Victor Dimukeje — Injured Reserve",
+        "De'Zhaun Stribling — Questionable"
+      ],
+      "home": [
+        "Alex Johnson — Injured Reserve",
+        "Myles Garrett — Questionable",
+        "Puka Nacua — Questionable",
+        "Justin Dedich — Injured Reserve",
+        "Keagen Trost — Injured Reserve",
+        "Matthew Caldwell — Injured Reserve",
+        "Daniel Rickert — Injured Reserve",
+        "Terrance Ferguson — Questionable",
+        "Zech McPhearson — Injured Reserve",
+        "Keir Thomas II — Injured Reserve",
+        "Davis Allen — Questionable",
+        "Alaric Jackson — Questionable"
+      ]
     }
   },
   {
@@ -99,6 +161,28 @@
       "temp": 25,
       "wind": 3,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Sean Tucker — Questionable",
+        "Emeka Egbuka — Questionable",
+        "Jalen McMillan — Questionable",
+        "Xavier Williams — Injured Reserve",
+        "Mohamed Kamara — Injured Reserve",
+        "Josh Hayes — Injured Reserve",
+        "David Sills V — Injured Reserve",
+        "Rueben Bain Jr. — Questionable",
+        "Deshawn McKnight — Injured Reserve"
+      ],
+      "home": [
+        "Shemar Stewart — Questionable",
+        "Ja'Marr Chase — Questionable",
+        "Tee Higgins — Questionable",
+        "Brian Parker II — Injured Reserve",
+        "Ja'Sir Taylor — Injured Reserve",
+        "Myles Murphy — Questionable",
+        "Dax Hill — Questionable"
+      ]
     }
   },
   {
@@ -133,6 +217,42 @@
       "temp": 24,
       "wind": 12,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Kendre Miller — Questionable",
+        "Lorenzo Styles Jr. — Injured Reserve",
+        "Michael Heldman — Injured Reserve",
+        "Jaylan Ford — Injured Reserve",
+        "David Long Jr. — Injured Reserve",
+        "Mason Tipton — Out",
+        "Devin Neal — Injured Reserve",
+        "Jordyn Tyson — Injured Reserve",
+        "Moliki Matavao — Injured Reserve",
+        "Ty Chandler — Injured Reserve",
+        "Rejzohn Wright — Injured Reserve",
+        "Oscar Delp — Questionable",
+        "John Ridgeway III — Questionable",
+        "Alvin Kamara — Questionable",
+        "Pete Werner — Questionable"
+      ],
+      "home": [
+        "Isiah Pacheco — Injured Reserve",
+        "Michael Niese — Injured Reserve",
+        "Giovanni Manu — Out",
+        "Cade Mays — Injured Reserve",
+        "Kerby Joseph — Out",
+        "Brian Branch — Out",
+        "Derrick Moore — Questionable",
+        "Payton Turner — Injured Reserve",
+        "Damone Clark — Injured Reserve",
+        "Sam LaPorta — Questionable",
+        "Ennis Rakestraw Jr. — Questionable",
+        "Jimmy Rolder — Questionable",
+        "Mekhi Wingo — Questionable",
+        "D.J. Reed — Questionable",
+        "Malcolm Rodriguez — Questionable"
+      ]
     }
   },
   {
@@ -167,6 +287,40 @@
       "temp": 28,
       "wind": 6,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Isaiah Davis — Questionable",
+        "Dominic Richardson — Injured Reserve",
+        "Connor Hulstein — Injured Reserve",
+        "Tre Brown — Injured Reserve",
+        "Tyler Baron — Out",
+        "Mykal Walker — Injured Reserve",
+        "D'Angelo Ponds — Questionable",
+        "Joseph Ossai — Questionable",
+        "Kenyon Sadiq — Questionable",
+        "Chip Trayanum — Injured Reserve",
+        "VJ Payne — Injured Reserve",
+        "Anez Cooper — Injured Reserve",
+        "Breece Hall — Questionable",
+        "Kingsley Jonathan — Injured Reserve",
+        "Qwan'tez Stiggers — Questionable"
+      ],
+      "home": [
+        "Carnell Tate — Questionable",
+        "Kendell Brooks — Injured Reserve",
+        "Andre James — Questionable",
+        "Tanoh Kpassagnon — Injured Reserve",
+        "Dorian Mausi — Injured Reserve",
+        "Joshua Williams — Injured Reserve",
+        "Wan'Dale Robinson — Questionable",
+        "Dominique Hampton — Injured Reserve",
+        "Milo Eifler — Injured Reserve",
+        "Keldric Faulk — Questionable",
+        "Mitchell Trubisky — Questionable",
+        "Jaylen Harrell — Injured Reserve",
+        "Jaren Kanak — Injured Reserve"
+      ]
     }
   },
   {
@@ -201,6 +355,34 @@
       "temp": 28,
       "wind": 5,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Zay Flowers — Questionable",
+        "Bilhal Kone — Injured Reserve",
+        "Adam Randall — Injured Reserve",
+        "Nnamdi Madubuike — Questionable",
+        "Danny Pinter — Injured Reserve",
+        "Jahquez Robinson — Injured Reserve",
+        "Aeneas Peebles — Questionable",
+        "Skylar Thompson — Injured Reserve",
+        "Jay Higgins IV — Questionable",
+        "Teddye Buchanan — Questionable"
+      ],
+      "home": [
+        "A.J. Haulcy — Questionable",
+        "Alec Pierce — Questionable",
+        "Tyler Warren — Questionable",
+        "Josh Downs — Questionable",
+        "Coleman Owen — Injured Reserve",
+        "D.J. Montgomery — Injured Reserve",
+        "Will Mallory — Injured Reserve",
+        "Charvarius Ward — Questionable",
+        "Carson Towt — Injured Reserve",
+        "Cam Taylor-Britt — Suspension",
+        "Sean McKeon — Questionable",
+        "Cameron Mitchell — Injured Reserve"
+      ]
     }
   },
   {
@@ -235,6 +417,31 @@
       "temp": 27,
       "wind": 11,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Keshawn Banks — Injured Reserve",
+        "JD Bertrand — Injured Reserve",
+        "Anterio Thompson — Out",
+        "Billy Bowman Jr. — Questionable",
+        "Beaux Collins — Injured Reserve",
+        "Michael Penix Jr. — Questionable",
+        "Trey Sermon — Injured Reserve",
+        "Malik Verdon — Injured Reserve",
+        "James Pearce Jr. — Suspension"
+      ],
+      "home": [
+        "Jack Driscoll — Injured Reserve",
+        "Donte Kent — Out",
+        "Ben Skowronek — Questionable",
+        "Will Howard — Questionable",
+        "Michael Pittman Jr. — Questionable",
+        "DK Metcalf — Questionable",
+        "DeShon Elliott — Injured Reserve",
+        "Jalen Ramsey — Questionable",
+        "Logan Lee — Injured Reserve",
+        "Jaquan Brisker — Questionable"
+      ]
     }
   },
   {
@@ -269,6 +476,43 @@
       "temp": 26,
       "wind": 6,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Kyle Monangai — Questionable",
+        "Hayden Large — Injured Reserve",
+        "Coby Bryant — Injured Reserve",
+        "Luther Burden III — Questionable",
+        "Dontae Manning — Injured Reserve",
+        "Ruben Hyppolite II — Injured Reserve",
+        "Beanie Bishop Jr. — Injured Reserve",
+        "Tony Fields II — Injured Reserve",
+        "Noah Sewell — Out",
+        "Shemar Turner — Out",
+        "Kyler Gordon — Out",
+        "Brittain Brown — Injured Reserve",
+        "Ray-Ray McCloud III — Injured Reserve",
+        "Jaylon Johnson — Questionable",
+        "Austin Booker — Questionable",
+        "Nephi Sewell — Injured Reserve",
+        "Keyshaun Elliott — Questionable"
+      ],
+      "home": [
+        "Jonathon Brooks — Questionable",
+        "Brady Christensen — Injured Reserve",
+        "Chuba Hubbard — Questionable",
+        "Ryan Hayes — Injured Reserve",
+        "Bam Martin-Scott — Injured Reserve",
+        "Taylor Moton — Out",
+        "Ikem Ekwonu — Out",
+        "Tershawn Wharton — Out",
+        "Trevor Etienne — Injured Reserve",
+        "Akayleb Evans — Questionable",
+        "Devin Lloyd — Questionable",
+        "Haynes King — Questionable",
+        "Xavier Legette — Questionable",
+        "Jaelan Phillips — Questionable"
+      ]
     }
   },
   {
@@ -303,6 +547,32 @@
       "temp": 26,
       "wind": 4,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Kalia Davis — Injured Reserve",
+        "Edefuan Ulofoshio — Injured Reserve",
+        "Elijah Chatman — Injured Reserve",
+        "Travis Bell — Injured Reserve",
+        "Isaiah Bond — Questionable",
+        "Dillon Gabriel — Injured Reserve",
+        "Joe Royer — Out",
+        "Alex Wright — Injured Reserve",
+        "Jamari Thrash — Injured Reserve",
+        "Kendrick Green — Injured Reserve"
+      ],
+      "home": [
+        "LeQuint Allen Jr. — Questionable",
+        "Bhayshul Tuten — Questionable",
+        "Jakobi Meyers — Questionable",
+        "Keivie Rose — Injured Reserve",
+        "Carter Bradley — Injured Reserve",
+        "Sam Mustipher — Injured Reserve",
+        "Patrick Mekari — Injured Reserve",
+        "Zach Durfee — Injured Reserve",
+        "Parker Hughes — Injured Reserve",
+        "Wyatt Milum — Questionable"
+      ]
     }
   },
   {
@@ -337,6 +607,38 @@
       "temp": 28,
       "wind": 6,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Khalil Shakir — Questionable",
+        "Keon Coleman — Questionable",
+        "Ty Johnson — Questionable",
+        "Zane Durant — Injured Reserve",
+        "Tyrell Shavers — Out",
+        "Terrel Bernard — Questionable",
+        "Jude Bowry — Questionable",
+        "Phidarian Mathis — Suspension",
+        "Demetrius Flannigan-Fowles — Injured Reserve"
+      ],
+      "home": [
+        "Sam Hagen — Injured Reserve",
+        "Braden Smith — Injured Reserve",
+        "Brevin Jordan — Questionable",
+        "Jadeveon Clowney — Questionable",
+        "Tank Dell — Injured Reserve",
+        "Kyonte Hamilton — Injured Reserve",
+        "Solomon Byrd — Injured Reserve",
+        "Ali Gaye — Injured Reserve",
+        "Dominique Robinson — Questionable",
+        "M.J. Stewart — Out",
+        "E.J. Speed — Out",
+        "Ja'Marcus Ingram — Injured Reserve",
+        "Dylan Horton — Injured Reserve",
+        "Wade Woodaz — Questionable",
+        "British Brooks — Questionable",
+        "K.C. Ossai — Injured Reserve",
+        "Jayden Higgins — Injured Reserve"
+      ]
     }
   },
   {
@@ -371,6 +673,31 @@
       "temp": 28,
       "wind": 14,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Ollie Gordon II — Questionable",
+        "Ben Sims — Injured Reserve",
+        "Storm Duck — Out",
+        "Trey Moore — Injured Reserve",
+        "Darrell Baker Jr. — Out",
+        "Kenneth Grant — Injured Reserve",
+        "Will Kacmarek — Questionable",
+        "Jacob Rodriguez — Questionable",
+        "Cole Turner — Injured Reserve",
+        "Ronnie Harrison Jr. — Questionable"
+      ],
+      "home": [
+        "Ashton Jeanty — Questionable",
+        "Chase Roberts — Injured Reserve",
+        "Dont'e Thornton Jr. — Injured Reserve",
+        "Carter Runyon — Injured Reserve",
+        "Keyron Crawford — Injured Reserve",
+        "Chigozie Anusiem — Injured Reserve",
+        "Justin Pickett — Injured Reserve",
+        "Brennan Jackson — Injured Reserve",
+        "Chris Collier — Injured Reserve"
+      ]
     }
   },
   {
@@ -405,6 +732,35 @@
       "temp": 24,
       "wind": 7,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Collin Oliver — Injured Reserve",
+        "Savion Williams — Injured Reserve",
+        "Luke Musgrave — Out",
+        "Micah Parsons — Out",
+        "Josh Jacobs — Out",
+        "Trey Dean III — Injured Reserve",
+        "Jordon Riley — Out",
+        "Thomas Yassmin — Injured Reserve",
+        "Tucker Kraft — Questionable",
+        "Warren Brinson — Questionable",
+        "Johnathan Baldwin II — Injured Reserve"
+      ],
+      "home": [
+        "Jacob Roberts — Injured Reserve",
+        "Kenny Dyson Jr. — Injured Reserve",
+        "Marcus Allen — Injured Reserve",
+        "Jermar Jefferson — Injured Reserve",
+        "Dontae Fleming — Injured Reserve",
+        "Michael Jurgens — Injured Reserve",
+        "Tyler Batty — Injured Reserve",
+        "Jacob Thomas — Questionable",
+        "Jeshaun Jones — Suspension",
+        "Caleb Tiernan — Questionable",
+        "Jakobe Thomas — Questionable",
+        "Jamal Adams — Injured Reserve"
+      ]
     }
   },
   {
@@ -439,6 +795,39 @@
       "temp": 23,
       "wind": 3,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "T.J. Maguranyanga — Injured Reserve",
+        "Curtis Jacobs — Injured Reserve",
+        "Quentin Moore — Injured Reserve",
+        "Jacoby Jones — Injured Reserve",
+        "Jer'Zhan Newton — Injured Reserve",
+        "Laremy Tunsil — Injured Reserve",
+        "Marcus Mariota — Questionable",
+        "Jacory Croskey-Merritt — Questionable",
+        "Deatrich Wise Jr. — Out",
+        "Trey Amos — Injured Reserve",
+        "Jeremy McNichols — Injured Reserve",
+        "Rachaad White — Questionable",
+        "Malik Spencer — Injured Reserve",
+        "Drake Jackson — Injured Reserve",
+        "Ben Sinnott — Questionable",
+        "Tim Settle — Questionable"
+      ],
+      "home": [
+        "Andre' Sam — Injured Reserve",
+        "Jakorian Bennett — Injured Reserve",
+        "Grant Calcaterra — Injured Reserve",
+        "Eli Stowers — Questionable",
+        "Markel Bell — Questionable",
+        "Johnny Wilson — Injured Reserve",
+        "Byron Young — Questionable",
+        "Jonathan Greenard — Out",
+        "Jonathan Jones — Questionable",
+        "Micah Morris — Questionable",
+        "Cooper DeJean — Questionable"
+      ]
     }
   },
   {
@@ -473,6 +862,35 @@
       "temp": 19,
       "wind": 7,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "Jeremiyah Love — Questionable",
+        "Zachary Carter — Injured Reserve",
+        "Will Johnson — Questionable",
+        "Tip Reiman — Out",
+        "James Conner — Injured Reserve",
+        "Trey Benson — Injured Reserve",
+        "Dadrion Taylor-Demerson — Questionable",
+        "Blake Gillikin — Questionable",
+        "Chase Bisontis — Injured Reserve",
+        "Joey Blount — Injured Reserve"
+      ],
+      "home": [
+        "Denzel Perryman — Injured Reserve",
+        "Kyle Kennard — Injured Reserve",
+        "Sincere Brown — Injured Reserve",
+        "Dalevon Campbell — Injured Reserve",
+        "Isaiah World — Out",
+        "Keaton Mitchell — Questionable",
+        "Scott Matlock — Injured Reserve",
+        "Branson Taylor — Injured Reserve",
+        "Tre' Harris — Questionable",
+        "Cameron Dicker — Questionable",
+        "Brenen Thompson — Questionable",
+        "Tyler Biadasz — Injured Reserve",
+        "Rashawn Slater — Questionable"
+      ]
     }
   },
   {
@@ -507,6 +925,32 @@
       "temp": 20,
       "wind": 3,
       "rain": 0
+    },
+    "injuries": {
+      "away": [
+        "DJ Rogers — Injured Reserve",
+        "Devin Moore — Injured Reserve",
+        "Marist Liufau — Injured Reserve",
+        "Kelvin Gilliam Jr. — Injured Reserve",
+        "Tyler Guyton — Questionable",
+        "Jonathan Bullard — Questionable",
+        "Princeton Fant — Injured Reserve"
+      ],
+      "home": [
+        "Malik Nabers — Questionable",
+        "Tyrone Tracy Jr. — Questionable",
+        "Korie Black — Injured Reserve",
+        "Theo Johnson — Questionable",
+        "Calvin Austin III — Injured Reserve",
+        "Colton Hood — Questionable",
+        "Francis Mauigoa — Questionable",
+        "Greg Newsome II — Questionable",
+        "Dru Phillips — Questionable",
+        "Roy Robertson-Harris — Injured Reserve",
+        "John Michael Schmitz Jr. — Questionable",
+        "Paulson Adebo — Questionable",
+        "Jarrick Bernard-Converse — Injured Reserve"
+      ]
     }
   },
   {
@@ -536,6 +980,35 @@
       "total": {
         "over": 42.5
       }
+    },
+    "injuries": {
+      "away": [
+        "Drew Sanders — Injured Reserve",
+        "Jonathon Cooper — Out",
+        "Nick Gargiulo — Out",
+        "Frank Crum — Injured Reserve",
+        "Riley Moss — Questionable",
+        "Marvin Mims Jr. — Questionable",
+        "Caleb Lohner — Injured Reserve",
+        "Levelle Bailey — Injured Reserve",
+        "Luke Wattenberg — Questionable",
+        "Matt Henningsen — Injured Reserve",
+        "Michael Deiter — Injured Reserve"
+      ],
+      "home": [
+        "Josh Simmons — Questionable",
+        "Chris Jones — Questionable",
+        "C.J. Hanson — Injured Reserve",
+        "EJ Smith — Injured Reserve",
+        "Chris Oladokun — Injured Reserve",
+        "Omarr Norman-Lott — Out",
+        "Jimmy Holiday — Injured Reserve",
+        "Patrick Mahomes — Questionable",
+        "Jeff Caldwell — Injured Reserve",
+        "Alohi Gilman — Questionable",
+        "Matt Waletzko — Injured Reserve",
+        "Ashton Gillotte — Questionable"
+      ]
     }
   }
 ]
