@@ -58,6 +58,36 @@
         "Robbie Ouzts — Injured Reserve",
         "Nick Emmanwori — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 250.47058,
+        "rush": 128.882,
+        "pts": 28.824,
+        "p3d": 42.929,
+        "rz": 68.03,
+        "r": {
+          "pass": 4,
+          "rush": 5,
+          "pts": 2,
+          "p3d": 6,
+          "rz": 15
+        }
+      },
+      "home": {
+        "pass": 228.05882,
+        "rush": 123.294,
+        "pts": 28.412,
+        "p3d": 39.806,
+        "rz": 68.04,
+        "r": {
+          "pass": 8,
+          "rush": 9,
+          "pts": 3,
+          "p3d": 16,
+          "rz": 14
+        }
+      }
     }
   },
   {
@@ -127,6 +157,36 @@
         "Davis Allen — Questionable",
         "Alaric Jackson — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 244.52942,
+        "rush": 106.882,
+        "pts": 25.706,
+        "p3d": 49.765,
+        "rz": 75.54,
+        "r": {
+          "pass": 5,
+          "rush": 23,
+          "pts": 10,
+          "p3d": 1,
+          "rz": 2
+        }
+      },
+      "home": {
+        "pass": 268.05884,
+        "rush": 126.588,
+        "pts": 30.471,
+        "p3d": 39.583,
+        "rz": 69.92,
+        "r": {
+          "pass": 1,
+          "rush": 6,
+          "pts": 1,
+          "p3d": 17,
+          "rz": 10
+        }
+      }
     }
   },
   {
@@ -183,6 +243,36 @@
         "Myles Murphy — Questionable",
         "Dax Hill — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 205.88235,
+        "rush": 114.529,
+        "pts": 22.353,
+        "p3d": 41.228,
+        "rz": 64,
+        "r": {
+          "pass": 20,
+          "rush": 20,
+          "pts": 18,
+          "p3d": 10,
+          "rz": 22
+        }
+      },
+      "home": {
+        "pass": 235.58824,
+        "rush": 93.588,
+        "pts": 24.353,
+        "p3d": 43.439,
+        "rz": 74.6,
+        "r": {
+          "pass": 6,
+          "rush": 28,
+          "pts": 12,
+          "p3d": 5,
+          "rz": 4
+        }
+      }
     }
   },
   {
@@ -253,6 +343,36 @@
         "D.J. Reed — Questionable",
         "Malcolm Rodriguez — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 219.29411,
+        "rush": 94.294,
+        "pts": 18,
+        "p3d": 39.462,
+        "rz": 58.73,
+        "r": {
+          "pass": 13,
+          "rush": 27,
+          "pts": 27,
+          "p3d": 18,
+          "rz": 30
+        }
+      },
+      "home": {
+        "pass": 253.11765,
+        "rush": 120.059,
+        "pts": 28.294,
+        "p3d": 38.785,
+        "rz": 69.64,
+        "r": {
+          "pass": 3,
+          "rush": 13,
+          "pts": 5,
+          "p3d": 20,
+          "rz": 12
+        }
+      }
     }
   },
   {
@@ -321,6 +441,36 @@
         "Jaylen Harrell — Injured Reserve",
         "Jaren Kanak — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 140.29411,
+        "rush": 123.294,
+        "pts": 17.647,
+        "p3d": 34.934,
+        "rz": 57.14,
+        "r": {
+          "pass": 31,
+          "rush": 10,
+          "pts": 28,
+          "p3d": 25,
+          "rz": 31
+        }
+      },
+      "home": {
+        "pass": 166.11765,
+        "rush": 93.471,
+        "pts": 16.706,
+        "p3d": 31.897,
+        "rz": 71.86,
+        "r": {
+          "pass": 29,
+          "rush": 29,
+          "pts": 29,
+          "p3d": 30,
+          "rz": 6
+        }
+      }
     }
   },
   {
@@ -383,6 +533,36 @@
         "Sean McKeon — Questionable",
         "Cameron Mitchell — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 175.58824,
+        "rush": 156.588,
+        "pts": 24.941,
+        "p3d": 40.887,
+        "rz": 61.02,
+        "r": {
+          "pass": 26,
+          "rush": 2,
+          "pts": 11,
+          "p3d": 13,
+          "rz": 27
+        }
+      },
+      "home": {
+        "pass": 227.82353,
+        "rush": 118.059,
+        "pts": 27.412,
+        "p3d": 42.564,
+        "rz": 74.68,
+        "r": {
+          "pass": 9,
+          "rush": 16,
+          "pts": 8,
+          "p3d": 8,
+          "rz": 3
+        }
+      }
     }
   },
   {
@@ -442,6 +622,36 @@
         "Logan Lee — Injured Reserve",
         "Jaquan Brisker — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 207.23529,
+        "rush": 125.765,
+        "pts": 20.765,
+        "p3d": 33.333,
+        "rz": 69.71,
+        "r": {
+          "pass": 19,
+          "rush": 7,
+          "pts": 23,
+          "p3d": 29,
+          "rz": 11
+        }
+      },
+      "home": {
+        "pass": 202.35294,
+        "rush": 103.294,
+        "pts": 23.353,
+        "p3d": 40,
+        "rz": 65.55,
+        "r": {
+          "pass": 22,
+          "rush": 25,
+          "pts": 15,
+          "p3d": 15,
+          "rz": 21
+        }
+      }
     }
   },
   {
@@ -513,6 +723,36 @@
         "Xavier Legette — Questionable",
         "Jaelan Phillips — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 225.05882,
+        "rush": 144.471,
+        "pts": 25.941,
+        "p3d": 42.731,
+        "rz": 67.53,
+        "r": {
+          "pass": 10,
+          "rush": 3,
+          "pts": 9,
+          "p3d": 7,
+          "rz": 17
+        }
+      },
+      "home": {
+        "pass": 179.29411,
+        "rush": 116.294,
+        "pts": 18.294,
+        "p3d": 36.098,
+        "rz": 66.67,
+        "r": {
+          "pass": 25,
+          "rush": 18,
+          "pts": 26,
+          "p3d": 24,
+          "rz": 19
+        }
+      }
     }
   },
   {
@@ -573,6 +813,36 @@
         "Parker Hughes — Injured Reserve",
         "Wyatt Milum — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 165.17647,
+        "rush": 97,
+        "pts": 16.412,
+        "p3d": 33.617,
+        "rz": 66.17,
+        "r": {
+          "pass": 30,
+          "rush": 26,
+          "pts": 30,
+          "p3d": 28,
+          "rz": 20
+        }
+      },
+      "home": {
+        "pass": 222.29411,
+        "rush": 115.059,
+        "pts": 27.882,
+        "p3d": 39.171,
+        "rz": 69.96,
+        "r": {
+          "pass": 12,
+          "rush": 19,
+          "pts": 6,
+          "p3d": 19,
+          "rz": 9
+        }
+      }
     }
   },
   {
@@ -639,6 +909,36 @@
         "K.C. Ossai — Injured Reserve",
         "Jayden Higgins — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 216.64706,
+        "rush": 159.647,
+        "pts": 28.294,
+        "p3d": 44.762,
+        "rz": 72.09,
+        "r": {
+          "pass": 15,
+          "rush": 1,
+          "pts": 4,
+          "p3d": 4,
+          "rz": 5
+        }
+      },
+      "home": {
+        "pass": 218.05882,
+        "rush": 108.941,
+        "pts": 23.765,
+        "p3d": 37.229,
+        "rz": 60.32,
+        "r": {
+          "pass": 14,
+          "rush": 21,
+          "pts": 13,
+          "p3d": 22,
+          "rz": 28
+        }
+      }
     }
   },
   {
@@ -698,6 +998,36 @@
         "Brennan Jackson — Injured Reserve",
         "Chris Collier — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 180.47058,
+        "rush": 120.235,
+        "pts": 20.412,
+        "p3d": 34.896,
+        "rz": 63.99,
+        "r": {
+          "pass": 24,
+          "rush": 12,
+          "pts": 24,
+          "p3d": 26,
+          "rz": 23
+        }
+      },
+      "home": {
+        "pass": 167.70589,
+        "rush": 77.471,
+        "pts": 14.176,
+        "p3d": 33.803,
+        "rz": 61.9,
+        "r": {
+          "pass": 27,
+          "rush": 31,
+          "pts": 31,
+          "p3d": 27,
+          "rz": 24
+        }
+      }
     }
   },
   {
@@ -761,6 +1091,36 @@
         "Jakobe Thomas — Questionable",
         "Jamal Adams — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 212.76471,
+        "rush": 119.824,
+        "pts": 23,
+        "p3d": 48.78,
+        "rz": 69.98,
+        "r": {
+          "pass": 17,
+          "rush": 14,
+          "pts": 16,
+          "p3d": 2,
+          "rz": 8
+        }
+      },
+      "home": {
+        "pass": 166.70589,
+        "rush": 108.294,
+        "pts": 20.235,
+        "p3d": 31.795,
+        "rz": 69.47,
+        "r": {
+          "pass": 28,
+          "rush": 22,
+          "pts": 25,
+          "p3d": 31,
+          "rz": 13
+        }
+      }
     }
   },
   {
@@ -828,6 +1188,30 @@
         "Micah Morris — Questionable",
         "Cooper DeJean — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": null,
+        "rush": null,
+        "pts": null,
+        "p3d": null,
+        "rz": null,
+        "r": {}
+      },
+      "home": {
+        "pass": 194.29411,
+        "rush": 116.941,
+        "pts": 22.294,
+        "p3d": 37.143,
+        "rz": 76.3,
+        "r": {
+          "pass": 23,
+          "rush": 17,
+          "pts": 19,
+          "p3d": 23,
+          "rz": 1
+        }
+      }
     }
   },
   {
@@ -891,6 +1275,36 @@
         "Tyler Biadasz — Injured Reserve",
         "Rashawn Slater — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 232.64706,
+        "rush": 93.118,
+        "pts": 20.882,
+        "p3d": 41.518,
+        "rz": 61.12,
+        "r": {
+          "pass": 7,
+          "rush": 30,
+          "pts": 22,
+          "p3d": 9,
+          "rz": 26
+        }
+      },
+      "home": {
+        "pass": 212.23529,
+        "rush": 121.588,
+        "pts": 21.647,
+        "p3d": 45.817,
+        "rz": 61.65,
+        "r": {
+          "pass": 18,
+          "rush": 11,
+          "pts": 20,
+          "p3d": 3,
+          "rz": 25
+        }
+      }
     }
   },
   {
@@ -951,6 +1365,36 @@
         "Paulson Adebo — Questionable",
         "Jarrick Bernard-Converse — Injured Reserve"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 266.29413,
+        "rush": 125.647,
+        "pts": 27.706,
+        "p3d": 41.148,
+        "rz": 66.81,
+        "r": {
+          "pass": 2,
+          "rush": 8,
+          "pts": 7,
+          "p3d": 12,
+          "rz": 18
+        }
+      },
+      "home": {
+        "pass": 204.35294,
+        "rush": 129.118,
+        "pts": 22.412,
+        "p3d": 40.179,
+        "rz": 59.81,
+        "r": {
+          "pass": 21,
+          "rush": 4,
+          "pts": 17,
+          "p3d": 14,
+          "rz": 29
+        }
+      }
     }
   },
   {
@@ -1009,6 +1453,36 @@
         "Matt Waletzko — Injured Reserve",
         "Ashton Gillotte — Questionable"
       ]
+    },
+    "ataque": {
+      "away": {
+        "pass": 223.94118,
+        "rush": 118.706,
+        "pts": 23.588,
+        "p3d": 41.202,
+        "rz": 67.92,
+        "r": {
+          "pass": 11,
+          "rush": 15,
+          "pts": 14,
+          "p3d": 11,
+          "rz": 16
+        }
+      },
+      "home": {
+        "pass": 214.05882,
+        "rush": 106.588,
+        "pts": 21.294,
+        "p3d": 37.443,
+        "rz": 69.98,
+        "r": {
+          "pass": 16,
+          "rush": 24,
+          "pts": 21,
+          "p3d": 21,
+          "rz": 7
+        }
+      }
     }
   }
 ]
