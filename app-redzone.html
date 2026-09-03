@@ -62,6 +62,8 @@
   .chip{font-size:12px;font-weight:600;padding:6px 10px;border-radius:10px}
   .chip.v{background:rgba(34,197,94,.14);color:var(--verde);border:1px solid rgba(34,197,94,.4)}
   .chip.r{background:rgba(229,72,77,.12);color:var(--rojo);border:1px solid rgba(229,72,77,.35)}
+  .odt.act{background:var(--verde);color:#07130B}
+  .chip.n{background:var(--bg);color:var(--texto-suave);border:1px solid var(--borde)}
   .premium{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--dorado);border-radius:18px;padding:22px;text-align:center;margin-top:22px}
   .premium .t{font-family:'Poppins';font-size:20px;color:var(--dorado);margin-bottom:6px}
   .premium p{color:var(--texto-suave);font-size:14px;margin-bottom:16px}
@@ -105,6 +107,24 @@
   <div id="appView" class="oculto">
     <div class="bienvenido">👋 ¡Hola!</div>
     <div class="sub">Este es tu <b>Pattern Board gratis</b>. Compara unidades y patrones de cada partido en una sola vista.</div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px;">
+      <label style="font-size:13px;color:var(--texto-suave)">🕒 Zona horaria</label>
+      <select id="selTz" style="background:var(--card);border:1px solid var(--borde);color:#fff;padding:8px 12px;border-radius:10px;font-family:inherit;">
+        <option value="auto">automática</option>
+        <option value="America/Mexico_City">México</option>
+        <option value="America/Los_Angeles">US Pacific</option>
+        <option value="America/Denver">US Mountain</option>
+        <option value="America/Chicago">US Central</option>
+        <option value="America/New_York">US Eastern</option>
+        <option value="UTC">UTC</option>
+      </select>
+      <span style="font-size:13px;color:var(--texto-suave)">· Cuotas</span>
+      <div style="display:flex;background:var(--card);border-radius:50px;padding:3px;gap:3px;">
+        <button id="odAm" class="odt act" onclick="setOdds('am')" style="background:transparent;border:none;color:var(--texto-suave);padding:6px 14px;border-radius:50px;font-weight:700;cursor:pointer;font-family:'Poppins';font-size:12px;">🇺🇸 Americano</button>
+        <button id="odDec" class="odt" onclick="setOdds('dec')" style="background:transparent;border:none;color:var(--texto-suave);padding:6px 14px;border-radius:50px;font-weight:700;cursor:pointer;font-family:'Poppins';font-size:12px;">🔢 Decimal</button>
+      </div>
+    </div>
 
     <div class="grid" id="gridFichas"></div>
 
@@ -187,6 +207,20 @@
 
   // ===== Carga las fichas reales desde fichas_semana1.json =====
   const ABBR = {"New England Patriots":"NE","Seattle Seahawks":"SEA","San Francisco 49ers":"SF","Los Angeles Rams":"LAR","Atlanta Falcons":"ATL","Pittsburgh Steelers":"PIT","Kansas City Chiefs":"KC","Buffalo Bills":"BUF","Philadelphia Eagles":"PHI","Dallas Cowboys":"DAL","Baltimore Ravens":"BAL","Cincinnati Bengals":"CIN","New Orleans Saints":"NO","Detroit Lions":"DET","New York Jets":"NYJ","Tennessee Titans":"TEN","Chicago Bears":"CHI","Carolina Panthers":"CAR","Cleveland Browns":"CLE","Jacksonville Jaguars":"JAX","Miami Dolphins":"MIA","Las Vegas Raiders":"LV","Green Bay Packers":"GB","Minnesota Vikings":"MIN","Washington Commanders":"WAS","Arizona Cardinals":"ARI","Los Angeles Chargers":"LAC","New York Giants":"NYG","Denver Broncos":"DEN","Houston Texans":"HOU","Tampa Bay Buccaneers":"TB","Indianapolis Colts":"IND"};
+  // Formato de cuotas + hora
+  var FORMATO = 'am';   // 'am' americano | 'dec' decimal
+  function am(p){ if(!p) return '—'; if(p>=2) return '+'+Math.round((p-1)*100); return '-'+Math.round(100/(p-1)); }
+  function fmtOdds(p){ return FORMATO==='am' ? am(p) : p; }
+  function fmtTime(iso){
+    var tz = document.getElementById('selTz') ? document.getElementById('selTz').value : 'auto';
+    var opts = {day:'2-digit',month:'2-digit',hour:'numeric',minute:'2-digit',hour12:true};
+    if(tz && tz!=='auto') opts.timeZone = tz;
+    return new Intl.DateTimeFormat('es-MX', opts).format(new Date(iso));
+  }
+  function setOdds(m){ FORMATO=m; document.getElementById('odAm').classList.toggle('act',m==='am'); document.getElementById('odDec').classList.toggle('act',m==='dec'); renderFichas(); }
+  window.setOdds = setOdds;
+  document.getElementById('selTz').addEventListener('change', function(){ renderFichas(); });
+
   async function renderFichas(){
     var grid = document.getElementById('gridFichas');
     if(!grid) return;
@@ -197,18 +231,21 @@
       function ab(n){ return ABBR[n] || n.split(' ').map(function(w){return w[0];}).join('').toUpperCase().slice(0,3); }
       var html='';
       fichas.forEach(function(f){
-        var probA=(f.odds&&f.odds.ml&&f.odds.ml.away)?f.odds.ml.away.prob:0, probH=(f.odds&&f.odds.ml&&f.odds.ml.home)?f.odds.ml.home.prob:0;
+        var ml=(f.odds&&f.odds.ml)||{};
+        var probA=ml.away?ml.away.prob:0, probH=ml.home?ml.home.prob:0;
         var fav = probA>=probH ? f.away : f.home, favProb = Math.max(probA,probH);
         var dog = fav===f.away ? f.home : f.away;
+        var favPrice = (fav===f.away?ml.away:ml.home)?.price;
+        var dogPrice = (dog===f.away?ml.away:ml.home)?.price;
         var sp=(f.odds&&f.odds.spread)||{};
         var spNeg = (sp.away<0) ? f.home : f.away;
         var total=(f.odds&&f.odds.total)?f.odds.total.over:'';
         html += '<div class="game">'+
-          '<div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.away)+'.png"> '+f.away+' <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.home)+'.png"> '+f.home+'</div><div class="meta">'+f.fecha+'<br><b style="color:var(--dorado)">'+(f.venue||'')+'</b></div></div>'+
+          '<div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.away)+'.png"> '+f.away+' <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.home)+'.png"> '+f.home+'</div><div class="meta">'+(f.commence_time?fmtTime(f.commence_time):f.fecha)+'<br><b style="color:var(--dorado)">'+(f.venue||'')+'</b></div></div>'+
           '<div class="sec"><div class="chips">'+
-            '<span class="chip v">▲ '+fav+' ML · '+favProb.toFixed(1)+'%</span>'+
-            '<span class="chip r">▼ '+dog+' · '+(100-favProb).toFixed(1)+'%</span>'+
-            '<span class="chip v">▲ '+spNeg+' '+Math.abs(sp.away||0)+'</span>'+
+            '<span class="chip v">▲ '+fav+' '+fmtOdds(favPrice)+' · '+favProb.toFixed(1)+'%</span>'+
+            '<span class="chip r">▼ '+dog+' '+fmtOdds(dogPrice)+' · '+(100-favProb).toFixed(1)+'%</span>'+
+            '<span class="chip n">Spread '+spNeg+' '+Math.abs(sp.away||0)+'</span>'+
             '<span class="chip n">Total '+total+'</span>'+
           '</div></div></div>';
       });

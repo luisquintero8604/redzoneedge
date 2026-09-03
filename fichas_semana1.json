@@ -32,7 +32,8 @@
       "temp": 14,
       "wind": 9,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-10T00:20:00Z"
   },
   {
     "away": "San Francisco 49ers",
@@ -67,7 +68,8 @@
       "temp": 16,
       "wind": 16,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-11T00:35:00Z"
   },
   {
     "away": "Atlanta Falcons",
@@ -102,7 +104,8 @@
       "temp": 27,
       "wind": 12,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Baltimore Ravens",
@@ -137,7 +140,8 @@
       "temp": 29,
       "wind": 7,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Buffalo Bills",
@@ -168,7 +172,8 @@
         "under": 44.5
       }
     },
-    "weather": null
+    "weather": null,
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Chicago Bears",
@@ -203,7 +208,8 @@
       "temp": 26,
       "wind": 6,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Tampa Bay Buccaneers",
@@ -238,7 +244,8 @@
       "temp": 26,
       "wind": 3,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Cleveland Browns",
@@ -273,7 +280,8 @@
       "temp": 26,
       "wind": 5,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "New Orleans Saints",
@@ -308,7 +316,8 @@
       "temp": 27,
       "wind": 6,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "New York Jets",
@@ -343,7 +352,8 @@
       "temp": 29,
       "wind": 2,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T17:00:00Z"
   },
   {
     "away": "Arizona Cardinals",
@@ -378,7 +388,8 @@
       "temp": 20,
       "wind": 6,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T20:25:00Z"
   },
   {
     "away": "Green Bay Packers",
@@ -409,7 +420,8 @@
         "under": 45.5
       }
     },
-    "weather": null
+    "weather": null,
+    "commence_time": "2026-09-13T20:25:00Z"
   },
   {
     "away": "Miami Dolphins",
@@ -444,7 +456,8 @@
       "temp": 29,
       "wind": 18,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T20:25:00Z"
   },
   {
     "away": "Washington Commanders",
@@ -479,7 +492,8 @@
       "temp": 22,
       "wind": 5,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-13T20:25:00Z"
   },
   {
     "away": "Dallas Cowboys",
@@ -514,7 +528,8 @@
       "temp": 20,
       "wind": 6,
       "rain": 0
-    }
+    },
+    "commence_time": "2026-09-14T00:20:00Z"
   },
   {
     "away": "Denver Broncos",
@@ -545,7 +560,8 @@
         "under": 42.5
       }
     },
-    "weather": null
+    "weather": null,
+    "commence_time": "2026-09-15T00:15:00Z"
   },
   {
     "away": "Detroit Lions",
@@ -576,6 +592,7 @@
         "under": 52.5
       }
     },
-    "weather": null
+    "weather": null,
+    "commence_time": "2026-09-18T00:15:00Z"
   }
 ]
