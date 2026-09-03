@@ -144,10 +144,10 @@
 
     <div class="grid" id="gridFichas"></div>
 
-    <div class="premium">
+    <div class="premium" id="premiumBox">
       <div class="t">💎 Premium</div>
-      <p>Desbloquea <b>todos los partidos</b>, <b>1ª mitad</b>, <b>stats avanzadas</b> y <b>menús interactivos</b>.</p>
-      <button class="btn btn-verde" onclick="alert('Aquí iría el pago (Gumroad) para desbloquear el Premium.')">Desbloquear Premium</button>
+      <p>Desbloquea el <b>⚔️ Unidad vs Unidad</b> y el <b>🤖 Análisis IA</b> de cada partido.</p>
+      <a href="https://quintero236.gumroad.com/l/xrwvr" target="_blank" rel="noopener" class="btn btn-verde">Desbloquear Premium · $9.99/mes</a>
     </div>
   </div>
 </div>
@@ -260,6 +260,15 @@
   }
 
   var isPremium = false;
+  function updatePremiumCta(){
+    var box = document.getElementById('premiumBox');
+    if(!box) return;
+    if(isPremium){
+      box.innerHTML = '<div class="t" style="color:var(--verde)">✅ ¡Eres Premium!</div><p>Gracias por apoyar RedZone Edge. Disfruta del Unidad vs Unidad y el Análisis IA.</p>';
+    } else {
+      box.innerHTML = '<div class="t">💎 Premium</div><p>Desbloquea el <b>⚔️ Unidad vs Unidad</b> y el <b>🤖 Análisis IA</b> de cada partido.</p><a href="https://quintero236.gumroad.com/l/xrwvr" target="_blank" rel="noopener" class="btn btn-verde">Desbloquear Premium · $9.99/mes</a>';
+    }
+  }
   async function checkPremium(email){
     try{
       var e = (email||'').toLowerCase();
@@ -270,6 +279,7 @@
       isPremium = Array.isArray(data) && data.length>0;
       try{ console.log('[RedZone] premium('+e+') =', isPremium, JSON.stringify(data)); }catch(_){}
     }catch(e){ isPremium=false; }
+    updatePremiumCta();
     renderFichas();
   }
 
