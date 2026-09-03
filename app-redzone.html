@@ -262,9 +262,12 @@
   var isPremium = false;
   async function checkPremium(email){
     try{
-      if(!client){ isPremium=false; renderFichas(); return; }
-      var { data } = await client.from('premium_users').select('*').eq('email', (email||'').toLowerCase());
-      isPremium = data && data.length>0;
+      var e = (email||'').toLowerCase();
+      // Consulta directa a Supabase REST con la clave anon (funciona siempre)
+      var q = "https://eetiqweztqtjhfeplorf.supabase.co/rest/v1/premium_users?select=email&email=eq."+encodeURIComponent(e);
+      var r = await fetch(q, { headers: { "apikey": "sb_publishable_anc_vJPGRlZs1pkgLL_GWQ_661Bl0lV", "Authorization": "Bearer sb_publishable_anc_vJPGRlZs1pkgLL_GWQ_661Bl0lV" } });
+      var data = await r.json();
+      isPremium = Array.isArray(data) && data.length>0;
     }catch(e){ isPremium=false; }
     renderFichas();
   }
