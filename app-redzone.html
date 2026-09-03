@@ -83,8 +83,8 @@
       <p id="loginSub">Accede o crea tu cuenta gratis y empieza a comparar partidos.</p>
 
       <div class="tabs">
-        <button id="tabLogin" class="activo" type="button">Entrar</button>
-        <button id="tabRegistro" type="button">Crear cuenta</button>
+        <button id="tabLogin" class="activo" type="button" onclick="cambiarTab('login')">Entrar</button>
+        <button id="tabRegistro" type="button" onclick="cambiarTab('registro')">Crear cuenta</button>
       </div>
 
       <div class="campo">
@@ -95,7 +95,7 @@
         <label>Contraseña</label>
         <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password">
       </div>
-      <button class="btn btn-verde" id="btnSubmit" type="button">Entrar</button>
+      <button class="btn btn-verde" id="btnSubmit" type="button" onclick="submitForm()">Entrar</button>
       <div class="msg" id="authMsg"></div>
       <div class="note">🔒 Tus datos se guardan en RedZone Edge. Solo los usamos para darte acceso.</div>
     </div>
@@ -214,15 +214,6 @@
     });
   }
 
-  // Conectar los botones con addEventListener (lo más fiable)
-  document.addEventListener('DOMContentLoaded', function () {
-    var b1 = document.getElementById('tabLogin');
-    var b2 = document.getElementById('tabRegistro');
-    var bs = document.getElementById('btnSubmit');
-    if(b1) b1.addEventListener('click', function(){ cambiarTab('login'); });
-    if(b2) b2.addEventListener('click', function(){ cambiarTab('registro'); });
-    if(bs) bs.addEventListener('click', submitForm);
-  });
 </script>
 </body>
 </html>
