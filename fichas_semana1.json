@@ -2,8 +2,8 @@
   {
     "away": "New England Patriots",
     "home": "Seattle Seahawks",
-    "fecha": "9/9/2026",
     "venue": "Lumen Field",
+    "fecha": "2026-09-10T00:20Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -24,22 +24,20 @@
         "home": -3.5
       },
       "total": {
-        "over": 44.5,
-        "under": 44.5
+        "over": 44.5
       }
     },
     "weather": {
       "temp": 14,
-      "wind": 9,
+      "wind": 14,
       "rain": 0
-    },
-    "commence_time": "2026-09-10T00:20:00Z"
+    }
   },
   {
     "away": "San Francisco 49ers",
     "home": "Los Angeles Rams",
-    "fecha": "10/9/2026",
     "venue": "Melbourne Cricket Ground",
+    "fecha": "2026-09-11T00:35Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -60,162 +58,20 @@
         "home": -3.5
       },
       "total": {
-        "over": 48.5,
-        "under": 48.5
+        "over": 48.5
       }
     },
     "weather": {
       "temp": 16,
       "wind": 16,
       "rain": 0
-    },
-    "commence_time": "2026-09-11T00:35:00Z"
-  },
-  {
-    "away": "Atlanta Falcons",
-    "home": "Pittsburgh Steelers",
-    "fecha": "13/9/2026",
-    "venue": "Acrisure Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 2.54,
-          "prob": 39.4
-        },
-        "home": {
-          "price": 1.54,
-          "prob": 64.9
-        }
-      },
-      "spread": {
-        "away": 3.5,
-        "home": -3.5
-      },
-      "total": {
-        "over": 42.5,
-        "under": 42.5
-      }
-    },
-    "weather": {
-      "temp": 27,
-      "wind": 12,
-      "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
-  },
-  {
-    "away": "Baltimore Ravens",
-    "home": "Indianapolis Colts",
-    "fecha": "13/9/2026",
-    "venue": "Lucas Oil Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 1.57,
-          "prob": 63.7
-        },
-        "home": {
-          "price": 2.45,
-          "prob": 40.8
-        }
-      },
-      "spread": {
-        "away": -3.5,
-        "home": 3.5
-      },
-      "total": {
-        "over": 48.5,
-        "under": 48.5
-      }
-    },
-    "weather": {
-      "temp": 29,
-      "wind": 7,
-      "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
-  },
-  {
-    "away": "Buffalo Bills",
-    "home": "Houston Texans",
-    "fecha": "13/9/2026",
-    "venue": "NRG Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 1.85,
-          "prob": 54.1
-        },
-        "home": {
-          "price": 1.98,
-          "prob": 50.5
-        }
-      },
-      "spread": {
-        "away": -1.5,
-        "home": 1.5
-      },
-      "total": {
-        "over": 44.5,
-        "under": 44.5
-      }
-    },
-    "weather": null,
-    "commence_time": "2026-09-13T17:00:00Z"
-  },
-  {
-    "away": "Chicago Bears",
-    "home": "Carolina Panthers",
-    "fecha": "13/9/2026",
-    "venue": "Bank of America Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 1.62,
-          "prob": 61.7
-        },
-        "home": {
-          "price": 2.36,
-          "prob": 42.4
-        }
-      },
-      "spread": {
-        "away": -2.5,
-        "home": 2.5
-      },
-      "total": {
-        "over": 47.5,
-        "under": 47.5
-      }
-    },
-    "weather": {
-      "temp": 26,
-      "wind": 6,
-      "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
+    }
   },
   {
     "away": "Tampa Bay Buccaneers",
     "home": "Cincinnati Bengals",
-    "fecha": "13/9/2026",
     "venue": "Paycor Stadium",
+    "fecha": "2026-09-13T17:00Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -236,58 +92,20 @@
         "home": -3.5
       },
       "total": {
-        "over": 50.5,
-        "under": 50.5
+        "over": 50.5
       }
     },
     "weather": {
-      "temp": 26,
+      "temp": 25,
       "wind": 3,
       "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
-  },
-  {
-    "away": "Cleveland Browns",
-    "home": "Jacksonville Jaguars",
-    "fecha": "13/9/2026",
-    "venue": "EverBank Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 4.1,
-          "prob": 24.4
-        },
-        "home": {
-          "price": 1.25,
-          "prob": 80
-        }
-      },
-      "spread": {
-        "away": 7.5,
-        "home": -7.5
-      },
-      "total": {
-        "over": 40.5,
-        "under": 40.5
-      }
-    },
-    "weather": {
-      "temp": 26,
-      "wind": 5,
-      "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
+    }
   },
   {
     "away": "New Orleans Saints",
     "home": "Detroit Lions",
-    "fecha": "13/9/2026",
     "venue": "Ford Field",
+    "fecha": "2026-09-13T17:00Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -308,22 +126,20 @@
         "home": -7
       },
       "total": {
-        "over": 49.5,
-        "under": 49.5
+        "over": 49.5
       }
     },
     "weather": {
-      "temp": 27,
-      "wind": 6,
+      "temp": 24,
+      "wind": 12,
       "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
+    }
   },
   {
     "away": "New York Jets",
     "home": "Tennessee Titans",
-    "fecha": "13/9/2026",
     "venue": "Nissan Stadium",
+    "fecha": "2026-09-13T17:00Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -344,58 +160,20 @@
         "home": -1.5
       },
       "total": {
-        "over": 38.5,
-        "under": 38.5
+        "over": 38.5
       }
     },
     "weather": {
-      "temp": 29,
-      "wind": 2,
-      "rain": 0
-    },
-    "commence_time": "2026-09-13T17:00:00Z"
-  },
-  {
-    "away": "Arizona Cardinals",
-    "home": "Los Angeles Chargers",
-    "fecha": "13/9/2026",
-    "venue": "SoFi Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 5.1,
-          "prob": 19.6
-        },
-        "home": {
-          "price": 1.18,
-          "prob": 84.7
-        }
-      },
-      "spread": {
-        "away": 10.5,
-        "home": -10.5
-      },
-      "total": {
-        "over": 46.5,
-        "under": 46.5
-      }
-    },
-    "weather": {
-      "temp": 20,
+      "temp": 28,
       "wind": 6,
       "rain": 0
-    },
-    "commence_time": "2026-09-13T20:25:00Z"
+    }
   },
   {
-    "away": "Green Bay Packers",
-    "home": "Minnesota Vikings",
-    "fecha": "13/9/2026",
-    "venue": "U.S. Bank Stadium",
+    "away": "Baltimore Ravens",
+    "home": "Indianapolis Colts",
+    "venue": "Lucas Oil Stadium",
+    "fecha": "2026-09-13T17:00Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -403,31 +181,169 @@
     "odds": {
       "ml": {
         "away": {
-          "price": 1.98,
-          "prob": 50.5
+          "price": 1.57,
+          "prob": 63.7
         },
         "home": {
-          "price": 1.85,
-          "prob": 54.1
+          "price": 2.45,
+          "prob": 40.8
         }
       },
       "spread": {
-        "away": 1.5,
-        "home": -1.5
+        "away": -3.5,
+        "home": 3.5
       },
       "total": {
-        "over": 45.5,
-        "under": 45.5
+        "over": 48.5
       }
     },
-    "weather": null,
-    "commence_time": "2026-09-13T20:25:00Z"
+    "weather": {
+      "temp": 28,
+      "wind": 5,
+      "rain": 0
+    }
+  },
+  {
+    "away": "Atlanta Falcons",
+    "home": "Pittsburgh Steelers",
+    "venue": "Acrisure Stadium",
+    "fecha": "2026-09-13T17:00Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
+    },
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 2.54,
+          "prob": 39.4
+        },
+        "home": {
+          "price": 1.54,
+          "prob": 64.9
+        }
+      },
+      "spread": {
+        "away": 3.5,
+        "home": -3.5
+      },
+      "total": {
+        "over": 42.5
+      }
+    },
+    "weather": {
+      "temp": 27,
+      "wind": 11,
+      "rain": 0
+    }
+  },
+  {
+    "away": "Chicago Bears",
+    "home": "Carolina Panthers",
+    "venue": "Bank of America Stadium",
+    "fecha": "2026-09-13T17:00Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
+    },
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 1.62,
+          "prob": 61.7
+        },
+        "home": {
+          "price": 2.36,
+          "prob": 42.4
+        }
+      },
+      "spread": {
+        "away": -2.5,
+        "home": 2.5
+      },
+      "total": {
+        "over": 47.5
+      }
+    },
+    "weather": {
+      "temp": 26,
+      "wind": 6,
+      "rain": 0
+    }
+  },
+  {
+    "away": "Cleveland Browns",
+    "home": "Jacksonville Jaguars",
+    "venue": "EverBank Stadium",
+    "fecha": "2026-09-13T17:00Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
+    },
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 4.1,
+          "prob": 24.4
+        },
+        "home": {
+          "price": 1.25,
+          "prob": 80
+        }
+      },
+      "spread": {
+        "away": 7.5,
+        "home": -7.5
+      },
+      "total": {
+        "over": 40.5
+      }
+    },
+    "weather": {
+      "temp": 26,
+      "wind": 4,
+      "rain": 0
+    }
+  },
+  {
+    "away": "Buffalo Bills",
+    "home": "Houston Texans",
+    "venue": "NRG Stadium",
+    "fecha": "2026-09-13T17:00Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
+    },
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 1.85,
+          "prob": 54.1
+        },
+        "home": {
+          "price": 1.98,
+          "prob": 50.5
+        }
+      },
+      "spread": {
+        "away": -1.5,
+        "home": 1.5
+      },
+      "total": {
+        "over": 44.5
+      }
+    },
+    "weather": {
+      "temp": 28,
+      "wind": 6,
+      "rain": 0
+    }
   },
   {
     "away": "Miami Dolphins",
     "home": "Las Vegas Raiders",
-    "fecha": "13/9/2026",
     "venue": "Allegiant Stadium",
+    "fecha": "2026-09-13T20:25Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -448,22 +364,54 @@
         "home": -3.5
       },
       "total": {
-        "over": 40.5,
-        "under": 40.5
+        "over": 40.5
       }
     },
     "weather": {
-      "temp": 29,
-      "wind": 18,
+      "temp": 28,
+      "wind": 14,
       "rain": 0
+    }
+  },
+  {
+    "away": "Green Bay Packers",
+    "home": "Minnesota Vikings",
+    "venue": "U.S. Bank Stadium",
+    "fecha": "2026-09-13T20:25Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
     },
-    "commence_time": "2026-09-13T20:25:00Z"
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 1.98,
+          "prob": 50.5
+        },
+        "home": {
+          "price": 1.85,
+          "prob": 54.1
+        }
+      },
+      "spread": {
+        "away": 1.5,
+        "home": -1.5
+      },
+      "total": {
+        "over": 45.5
+      }
+    },
+    "weather": {
+      "temp": 24,
+      "wind": 7,
+      "rain": 0
+    }
   },
   {
     "away": "Washington Commanders",
     "home": "Philadelphia Eagles",
-    "fecha": "13/9/2026",
     "venue": "Lincoln Financial Field",
+    "fecha": "2026-09-13T20:25Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -484,22 +432,54 @@
         "home": -5.5
       },
       "total": {
-        "over": 45.5,
-        "under": 45.5
+        "over": 45.5
       }
     },
     "weather": {
-      "temp": 22,
-      "wind": 5,
+      "temp": 23,
+      "wind": 3,
       "rain": 0
+    }
+  },
+  {
+    "away": "Arizona Cardinals",
+    "home": "Los Angeles Chargers",
+    "venue": "SoFi Stadium",
+    "fecha": "2026-09-13T20:25Z",
+    "records": {
+      "home": "0-0",
+      "away": "0-0"
     },
-    "commence_time": "2026-09-13T20:25:00Z"
+    "odds": {
+      "ml": {
+        "away": {
+          "price": 5.1,
+          "prob": 19.6
+        },
+        "home": {
+          "price": 1.18,
+          "prob": 84.7
+        }
+      },
+      "spread": {
+        "away": 10.5,
+        "home": -10.5
+      },
+      "total": {
+        "over": 46.5
+      }
+    },
+    "weather": {
+      "temp": 19,
+      "wind": 7,
+      "rain": 0
+    }
   },
   {
     "away": "Dallas Cowboys",
     "home": "New York Giants",
-    "fecha": "13/9/2026",
     "venue": "MetLife Stadium",
+    "fecha": "2026-09-14T00:20Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -520,22 +500,20 @@
         "home": 2.5
       },
       "total": {
-        "over": 48.5,
-        "under": 48.5
+        "over": 48.5
       }
     },
     "weather": {
       "temp": 20,
-      "wind": 6,
+      "wind": 3,
       "rain": 0
-    },
-    "commence_time": "2026-09-14T00:20:00Z"
+    }
   },
   {
     "away": "Denver Broncos",
     "home": "Kansas City Chiefs",
-    "fecha": "14/9/2026",
     "venue": "Arrowhead Stadium",
+    "fecha": "2026-09-15T00:15Z",
     "records": {
       "home": "0-0",
       "away": "0-0"
@@ -556,43 +534,8 @@
         "home": -3
       },
       "total": {
-        "over": 42.5,
-        "under": 42.5
+        "over": 42.5
       }
-    },
-    "weather": null,
-    "commence_time": "2026-09-15T00:15:00Z"
-  },
-  {
-    "away": "Detroit Lions",
-    "home": "Buffalo Bills",
-    "fecha": "17/9/2026",
-    "venue": "Highmark Stadium",
-    "records": {
-      "home": "0-0",
-      "away": "0-0"
-    },
-    "odds": {
-      "ml": {
-        "away": {
-          "price": 2.36,
-          "prob": 42.4
-        },
-        "home": {
-          "price": 1.62,
-          "prob": 61.7
-        }
-      },
-      "spread": {
-        "away": 3,
-        "home": -3
-      },
-      "total": {
-        "over": 52.5,
-        "under": 52.5
-      }
-    },
-    "weather": null,
-    "commence_time": "2026-09-18T00:15:00Z"
+    }
   }
 ]
