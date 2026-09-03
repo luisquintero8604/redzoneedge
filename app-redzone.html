@@ -64,6 +64,7 @@
   .chip.r{background:rgba(229,72,77,.12);color:var(--rojo);border:1px solid rgba(229,72,77,.35)}
   .odt.act{background:var(--verde);color:#07130B}
   .chip.n{background:var(--bg);color:var(--texto-suave);border:1px solid var(--borde)}
+  .prem-n{font-size:16px;margin-right:4px}
   .fsec{background:var(--card);border-top:1px solid var(--borde)}
   .fsec summary{list-style:none;cursor:pointer;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;font-family:'Poppins';font-weight:700;font-size:13.5px;color:var(--verde)}
   .fsec summary::-webkit-details-marker{display:none}
@@ -223,7 +224,7 @@
     document.getElementById('loginView').classList.add('oculto');
     document.getElementById('appView').classList.remove('oculto');
     document.getElementById('headerActions').innerHTML =
-      '<div class="user-chip"><span class="email">'+(user?user.email:'')+'</span><span class="avatar">'+(user?user.email[0].toUpperCase():'?')+'</span><button class="btn btn-borde" onclick="logout()">Salir</button></div>';
+      '<div class="user-chip"><span id="premBadge" class="prem-n"></span><span class="email">'+(user?user.email:'')+'</span><span class="avatar">'+(user?user.email[0].toUpperCase():'?')+'</span><button class="btn btn-borde" onclick="logout()">Salir</button></div>';
     checkPremium(user ? user.email : '');   // ¿es premium? → luego renderiza
   }
   function mostrarLogin(){
@@ -262,6 +263,8 @@
   var isPremium = false;
   function updatePremiumCta(){
     var box = document.getElementById('premiumBox');
+    var b = document.getElementById('premBadge');
+    if(b) b.textContent = isPremium ? '💎' : '';
     if(!box) return;
     if(isPremium){
       box.innerHTML = '<div class="t" style="color:var(--verde)">✅ ¡Eres Premium!</div><p>Gracias por apoyar RedZone Edge. Disfruta del Unidad vs Unidad y el Análisis IA.</p>';
