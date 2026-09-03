@@ -88,7 +88,8 @@
           "rz": 14
         }
       }
-    }
+    },
+    "analisis_ia": "Seattle Seahawks (1.57) es favorito local ante New England Patriots (2.45), con un spread de 3.5 puntos y un total de 44.5. Ambas ofensivas son similares en puntos (28.8 vs 28.4), aunque New England destaca en pase (#4) y carrera (#5), mientras Seattle es ligeramente inferior en ambos rubros. New England sufre múltiples bajas, incluyendo a Harold Landry III y Brenden Schooler, mientras Seattle pierde a Zach Charbonnet y Terrion Arnold, con varias dudas. El clima es templado (14°C) con viento moderado y sin lluvia en Lumen Field."
   },
   {
     "away": "San Francisco 49ers",
@@ -187,7 +188,8 @@
           "rz": 10
         }
       }
-    }
+    },
+    "analisis_ia": "Los Angeles Rams reciben a San Francisco 49ers en Melbourne (16°C, viento 16 km/h, sin lluvia). Los Rams son favoritos en la moneyline (66%) y parten con un spread de -3.5; el total de puntos está fijado en 48.5. En ofensiva 2025, los Rams lideran en pase (268.1 yds/juego, #1) y superan a los 49ers en carrera (126.6 vs 106.9) y puntos (30.5 vs 25.7). Ambos equipos presentan múltiples bajas: los 49ers tienen a varios titulares como Questionable (incluyendo a Christian McCaffrey y George Kittle) y jugadores en IR, mientras que los Rams también reportan dudas clave como Puka Nacua y Myles Garrett."
   },
   {
     "away": "Tampa Bay Buccaneers",
@@ -273,7 +275,8 @@
           "rz": 4
         }
       }
-    }
+    },
+    "analisis_ia": "Los Cincinnati Bengals (0-0) parten como favoritos en casa ante los Tampa Bay Buccaneers (0-0), con una cuota de 1.51 (66%) frente al 2.64 (38%) de los visitantes y un spread de 3.5 puntos. La ofensiva de Cincinnati destaca en pase (235.6 yds/juego, #6), mientras que Tampa Bay muestra números más discretos en ambas facetas (pase #20 y carrera #20). Varios jugadores clave de ambos equipos están en duda, incluyendo a Ja'Marr Chase y Tee Higgins (Bengals) y a Jalen McMillan (Buccaneers), con múltiples bajas en la lista de reservas lesionados. El total se sitúa en 50.5 puntos, con clima favorable (25°C, viento bajo y sin lluvia) en el Paycor Stadium."
   },
   {
     "away": "New Orleans Saints",
@@ -373,7 +376,8 @@
           "rz": 12
         }
       }
-    }
+    },
+    "analisis_ia": "Los Detroit Lions parten como claros favoritos en casa (ML 1.34, 75%) frente a unos New Orleans Saints que abren con un spread de 7 puntos. La ofensiva de Detroit supera a la de Nueva Orleans en yardas totales por juego (373.2 vs 313.6) y en puntos anotados (28.3 vs 18.0), con una ventaja notable en el juego aéreo (253.1 vs 219.3). Ambos equipos presentan múltiples bajas, destacando en Detroit las ausencias de Kerby Joseph y Brian Branch en defensa, mientras que Nueva Orleans lidia con varias bajas en reserva de lesionados y jugadores cuestionables como Alvin Kamara. El total se sitúa en 49.5 puntos, con condiciones climáticas favorables en el Ford Field (24°C, sin lluvia)."
   },
   {
     "away": "New York Jets",
@@ -471,7 +475,8 @@
           "rz": 6
         }
       }
-    }
+    },
+    "analisis_ia": "Los Jets visitan a los Titans en un duelo de equipos sin partidos disputados (0-0). Los locales son favoritos en la línea de dinero (57%) y por 1.5 puntos, con un total bajo de 38.5. En ofensiva, los Jets destacan en carrera (123.3 yds, #10), mientras que los Titans tienen números pobres en pase y carrera (ambos #29). Ambos equipos presentan múltiples bajas, incluyendo jugadores clave en la lista de lesionados y varios cuestionables, en un clima cálido y sin lluvia."
   },
   {
     "away": "Baltimore Ravens",
@@ -563,7 +568,8 @@
           "rz": 3
         }
       }
-    }
+    },
+    "analisis_ia": "Baltimore Ravens y los Indianapolis Colts abren la temporada 2025 con récords de 0-0. Los Colts son favoritos por 3.5 puntos, aunque los Ravens tienen un 64% de probabilidad de ganar según las cuotas. Baltimore destaca en carrera (156.6 yds/juego, #2), mientras que Indianápolis lidera en pase (227.8 yds/juego, #9) y anota más puntos (27.4 vs 24.9). Ambos equipos reportan múltiples bajas, incluyendo jugadores clave como Zay Flowers y Nnamdi Madubuike (Ravens) y Alec Pierce, Josh Downs y Charvarius Ward (Colts), con clima favorable en el Lucas Oil Stadium."
   },
   {
     "away": "Atlanta Falcons",
@@ -652,7 +658,8 @@
           "rz": 21
         }
       }
-    }
+    },
+    "analisis_ia": "Los Atlanta Falcons (0-0) visitan a los Pittsburgh Steelers (0-0) en el Acrisure Stadium, con clima cálido (27°C) y sin lluvia. Los Falcons son favoritos por 3.5 puntos en el spread, aunque los Steelers tienen mayor probabilidad de victoria directa (65% vs 39%). En ofensiva, Atlanta destaca en carrera (#7) mientras Pittsburgh supera en puntos anotados (23.4 vs 20.8). Ambos equipos presentan múltiples bajas, incluyendo a jugadores clave como Michael Penix Jr. (Q) y DK Metcalf (Q)."
   },
   {
     "away": "Chicago Bears",
@@ -753,7 +760,8 @@
           "rz": 19
         }
       }
-    }
+    },
+    "analisis_ia": "Chicago Bears visitan a Carolina Panthers en Bank of America Stadium con clima cálido (26°C) y viento leve. Los Bears presentan una ofensiva superior en yardas por pase (225.1, #10) y carrera (144.5, #3), mientras que los Panthers ocupan puestos bajos en ambos rubros. Carolina tiene múltiples bajas en la línea ofensiva (Taylor Moton, Ikem Ekwonu) y jugadores clave cuestionables, mientras que Chicago también reporta numerosas ausencias en defensa. Las cuotas favorecen a Chicago como favorito (ML 1.62) con un spread de 2.5 puntos y un total de 47.5."
   },
   {
     "away": "Cleveland Browns",
@@ -843,7 +851,8 @@
           "rz": 9
         }
       }
-    }
+    },
+    "analisis_ia": "Los Cleveland Browns visitan a los Jacksonville Jaguars en el EverBank Stadium con clima cálido (26°C) y sin lluvia. Jacksonville es favorito con un 80% de probabilidad de victoria y un spread de 7.5 puntos a favor de los Browns, mientras que el total está en 40.5. La ofensiva de los Jaguars supera a la de Cleveland en yardas por pase (222.3 vs 165.2) y en puntos por juego (27.9 vs 16.4), aunque ambos equipos tienen récords de 0-0. Cleveland reporta múltiples bajas en la reserva de lesionados, mientras que Jacksonville tiene varios jugadores cuestionables, incluyendo a Jakobi Meyers."
   },
   {
     "away": "Buffalo Bills",
@@ -939,7 +948,8 @@
           "rz": 28
         }
       }
-    }
+    },
+    "analisis_ia": "Buffalo Bills y Houston Texans abren la temporada con récords de 0-0. Los Bills llegan con la mejor ofensiva terrestre de la liga (159.6 yds/juego, #1), mientras que los Texans muestran un ataque aéreo ligeramente superior (218.1 vs 216.6 yds/juego). Buffalo presenta múltiples bajas en su ofensiva, con Khalil Shakir, Keon Coleman y Ty Johnson como cuestionables, además de varias ausencias en defensa; Houston también sufre numerosas bajas, incluyendo a varios titulares en la lista de reservas lesionados. Las cuotas favorecen ligeramente a Buffalo como visitante (ML 1.85), con un spread de 1.5 puntos para Houston y un total de 44.5. El clima es cálido y sin lluvia en el NRG Stadium."
   },
   {
     "away": "Miami Dolphins",
@@ -1028,7 +1038,8 @@
           "rz": 24
         }
       }
-    }
+    },
+    "analisis_ia": "Los Miami Dolphins visitan a los Las Vegas Raiders, ambos con récord de 0-0. Las Vegas es favorito con una cuota de 1.51 (66% de probabilidad) y un spread de -3.5, mientras que el total de puntos se sitúa en 40.5. En ofensiva, Miami promedia más yardas por juego (300.7 totales) que Las Vegas (245.2), destacando en carrera (120.2 vs 77.5) y puntos (20.4 vs 14.2). Las lesiones afectan a ambos, con bajas clave en la defensa de Miami y múltiples jugadores en la reserva de lesionados de Las Vegas; el clima es cálido y seco en el Allegiant Stadium."
   },
   {
     "away": "Green Bay Packers",
@@ -1121,7 +1132,8 @@
           "rz": 13
         }
       }
-    }
+    },
+    "analisis_ia": "Green Bay Packers y Minnesota Vikings abren la temporada 2025 con récords de 0-0, en un duelo donde los Vikings son ligeros favoritos en la línea de dinero (1.85) y el spread favorece a Green Bay por 1.5 puntos, con un total de 45.5. La ofensiva de los Packers supera a la de Minnesota en yardas por pase (212.8 vs 166.7) y en puntos anotados (23 vs 20.2), aunque ambas unidades de carrera están cerca en producción. Green Bay enfrenta bajas clave, incluyendo a Josh Jacobs y Luke Musgrave como out, mientras que Minnesota tiene múltiples jugadores en la lista de lesionados, pero sin bajas titulares confirmadas en la ofensiva. El partido se juega en el U.S. Bank Stadium bajo clima templado (24°C, viento de 7 km/h y sin lluvia), condiciones que no afectan el juego."
   },
   {
     "away": "Washington Commanders",
@@ -1212,7 +1224,8 @@
           "rz": 1
         }
       }
-    }
+    },
+    "analisis_ia": "Washington Commanders y Philadelphia Eagles abren la temporada 2025 con récords de 0-0. Los Eagles son favoritos en casa con una cuota de 1.46 (69% de probabilidad implícita), mientras que Washington tiene una cuota de 2.8 (36%). Philadelphia promedia 194.3 yardas de pase por juego (rank #23) y 116.9 de carrera (#17), con 22.3 puntos por partido; los datos de ofensiva de Washington no están disponibles. Ambos equipos presentan múltiples bajas, incluyendo varios jugadores en la lista de lesionados, y el clima es templado (23°C, viento leve)."
   },
   {
     "away": "Arizona Cardinals",
@@ -1305,7 +1318,8 @@
           "rz": 25
         }
       }
-    }
+    },
+    "analisis_ia": "Los Cardinals visitan a los Chargers en el SoFi Stadium con un clima favorable (19°C, sin lluvia). Los Chargers son amplios favoritos en la moneyline (85%) y con un spread de -10.5, mientras que el total se sitúa en 46.5 puntos. En ofensiva, Arizona destaca en pase (232.6 yds, #7) pero es débil en carrera (#30), mientras que Los Ángeles muestra un juego terrestre sólido (#11) y promedios de puntos similares (21.6 vs 20.9). Ambos equipos presentan múltiples bajas, incluyendo corredores clave de Arizona (James Conner y Trey Benson en IR) y varios titulares de los Chargers en la línea ofensiva y defensiva."
   },
   {
     "away": "Dallas Cowboys",
@@ -1395,7 +1409,8 @@
           "rz": 29
         }
       }
-    }
+    },
+    "analisis_ia": "Los Dallas Cowboys visitan a los New York Giants en el MetLife Stadium con clima favorable (20°C, sin lluvia). Dallas presenta una ofensiva aérea destacada (266.3 yds/juego, #2) y promedia 27.7 puntos, mientras que Nueva York se apoya en su carrera (129.1 yds/juego, #4) con 22.4 puntos. Los Cowboys son favoritos en la línea de dinero (ML 1.68) y el spread favorece a los Giants por 2.5 puntos, con un total de 48.5. Ambos equipos tienen múltiples bajas en la lista de lesionados, incluyendo titulares cuestionables como Tyler Guyton (Dallas) y Malik Nabers (Nueva York)."
   },
   {
     "away": "Denver Broncos",
@@ -1483,6 +1498,7 @@
           "rz": 7
         }
       }
-    }
+    },
+    "analisis_ia": "Denver Broncos y Kansas City Chiefs abren la temporada 2025 con récords de 0-0. Los Chiefs son favoritos en casa con una cuota de 1.68 (60% de probabilidad) frente a los Broncos (2.24, 45%), y el spread favorece a Kansas City por 3 puntos con un total de 42.5. En ofensiva, Denver supera a Kansas City en yardas de pase (223.9 vs 214.1), carrera (118.7 vs 106.6) y puntos por juego (23.6 vs 21.3). Ambos equipos reportan múltiples bajas, incluyendo a jugadores clave como Jonathon Cooper (Out) y Patrick Mahomes (Questionable), mientras que el clima no está disponible."
   }
 ]
