@@ -158,6 +158,18 @@
 
   let modo = 'login';
 
+  // Añade el email a tu lista de Mailchimp (mismo endpoint de la lista de espera)
+  function addToMailchimp(email){
+    try {
+      fetch("https://redzoneedge.us2.list-manage.com/subscribe/post?u=71ec33dab01bb01337f7be4ea&id=eda313920c&f_id=006476e1f0", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "EMAIL="+encodeURIComponent(email)+"&b_71ec33dab01bb01337f7be4ea_eda313920c="
+      });
+    } catch(e){ /* silencioso */ }
+  }
+
   // Función de cambio de pestaña (se expone globalmente; funciona siempre)
   function cambiarTab(m){
     modo = m;
@@ -185,6 +197,7 @@
       } else {
         const { data, error } = await client.auth.signUp({ email: correo, password: pass });
         if(error) throw error;
+        addToMailchimp(correo);   // 📬 añade el email a tu lista de Mailchimp
         // Si "Confirm email" está OFF, signUp devuelve sesión directa.
         if(!(data && data.session)) {
           msg.textContent = '✅ Cuenta creada. Inicia sesión para entrar.';
