@@ -147,8 +147,8 @@
   const SUPABASE_URL = "https://eetiqweztqtjhfeplorf.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_anc_vJPGRlZs1pkgLL_GWQ_661Bl0lV";
 
-  let supabase = null;
-  try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
+  let client = null;
+  try { client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
   catch(e){ console.error('Supabase init:', e); }
 
   let modo = 'login';
@@ -171,14 +171,14 @@
     const msg = document.getElementById('authMsg');
     msg.className = 'msg';
     if(!correo || !pass){ msg.textContent = 'Escribe tu correo y contraseña.'; msg.classList.add('err'); return; }
-    if(!supabase){ msg.textContent = '⚠️ Hubo un problema cargando la conexión. Recarga la página.'; msg.classList.add('err'); return; }
+    if(!client){ msg.textContent = '⚠️ Hubo un problema cargando la conexión. Recarga la página.'; msg.classList.add('err'); return; }
 
     try {
       if(modo === 'login'){
-        const { error } = await supabase.auth.signInWithPassword({ email: correo, password: pass });
+        const { error } = await client.auth.signInWithPassword({ email: correo, password: pass });
         if(error) throw error;
       } else {
-        const { data, error } = await supabase.auth.signUp({ email: correo, password: pass });
+        const { data, error } = await client.auth.signUp({ email: correo, password: pass });
         if(error) throw error;
         // Si "Confirm email" está OFF, signUp devuelve sesión directa.
         if(!(data && data.session)) {
@@ -204,11 +204,11 @@
     document.getElementById('loginView').classList.remove('oculto');
     document.getElementById('headerActions').innerHTML = '';
   }
-  function logout(){ if(supabase) supabase.auth.signOut(); }
+  function logout(){ if(client) client.auth.signOut(); }
   window.logout = logout;
 
-  if(supabase){
-    supabase.auth.onAuthStateChange((event, session) => {
+  if(client){
+    client.auth.onAuthStateChange((event, session) => {
       if(session && session.user){ mostrarApp(session.user); }
       else { mostrarLogin(); }
     });
