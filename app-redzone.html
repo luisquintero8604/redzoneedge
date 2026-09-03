@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedZone Edge — Acceso</title>
+<link rel="icon" href="redzoneedge-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<style>
+  :root{--bg:#0A101F;--card:#121C33;--card2:#1A2647;--borde:rgba(255,255,255,.08);--verde:#22C55E;--dorado:#F5B70A;--rojo:#E5484D;--texto:#EDF2F7;--texto-suave:#9FB0C7;--blanco:#fff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--texto);line-height:1.5;min-height:100vh}
+  .container{max-width:1000px;margin:0 auto;padding:20px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--borde);margin-bottom:22px}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Poppins';font-weight:800;font-size:22px;color:#fff}
+  .logo img{width:42px;height:42px;border-radius:10px}.logo span{color:var(--verde)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:50px;font-weight:700;border:none;cursor:pointer;transition:.2s;font-family:'Poppins';font-size:14px}
+  .btn-verde{background:var(--verde);color:#07130B}.btn-verde:hover{background:#1fb95a}
+  .btn-borde{background:transparent;color:#fff;border:2px solid var(--borde)}
+  .btn-borde:hover{border-color:var(--verde);color:var(--verde)}
+  .oculto{display:none!important}
+
+  /* Login */
+  .login-wrap{display:flex;align-items:center;justify-content:center;min-height:80vh}
+  .login-caja{background:var(--card);border:1px solid var(--borde);border-radius:22px;padding:34px 30px;max-width:400px;width:100%;box-shadow:0 16px 40px rgba(0,0,0,.4)}
+  .login-caja h1{font-family:'Poppins';color:#fff;font-size:22px;margin-bottom:4px}
+  .login-caja p{color:var(--texto-suave);font-size:13.5px;margin-bottom:20px}
+  .tabs{display:flex;background:var(--bg);border-radius:50px;padding:4px;margin-bottom:20px}
+  .tabs button{flex:1;background:transparent;border:none;color:var(--texto-suave);padding:9px;border-radius:50px;font-weight:700;cursor:pointer;font-family:'Poppins';font-size:13px}
+  .tabs button.activo{background:var(--verde);color:#07130B}
+  .campo{margin-bottom:14px}
+  .campo label{display:block;font-size:12.5px;font-weight:600;margin-bottom:6px;color:var(--texto-suave)}
+  .campo input{width:100%;padding:12px 14px;border-radius:12px;border:2px solid var(--borde);background:var(--bg);color:#fff;font-size:15px;outline:none}
+  .campo input:focus{border-color:var(--verde)}
+  .msg{font-size:13px;margin-top:12px;min-height:18px}
+  .msg.err{color:var(--rojo)}.msg.ok{color:var(--verde)}
+  .login-caja .btn{width:100%;justify-content:center;margin-top:6px}
+  .note{font-size:12px;color:var(--texto-suave);margin-top:12px;text-align:center}
+
+  /* Board */
+  .user-chip{display:flex;align-items:center;gap:10px}
+  .user-chip .email{font-size:13px;color:var(--texto-suave)}
+  .avatar{width:34px;height:34px;border-radius:50%;background:var(--verde);color:#07130B;display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Poppins'}
+  .bienvenido{font-family:'Poppins';font-size:22px;color:#fff;margin-bottom:4px}
+  .sub{color:var(--texto-suave);font-size:14px;margin-bottom:20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:18px}
+  .game{background:var(--card);border:1px solid var(--borde);border-radius:18px;overflow:hidden}
+  .game-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--card2)}
+  .teams{display:flex;align-items:center;gap:8px;font-family:'Poppins';font-weight:700;font-size:15px;color:#fff}
+  .teams img{width:28px;height:28px}
+  .meta{font-size:11.5px;color:var(--texto-suave);text-align:right}
+  .sec{padding:12px 16px;border-top:1px solid var(--borde)}
+  .unit{margin-bottom:9px}
+  .unit .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--texto-suave);margin-bottom:4px}
+  .track{display:flex;height:9px;border-radius:6px;overflow:hidden;background:var(--bg)}
+  .fill-l{background:linear-gradient(90deg,#15803D,#22C55E)}
+  .fill-r{background:linear-gradient(90deg,#E5484D,#B91C1C);margin-left:auto}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-size:12px;font-weight:600;padding:6px 10px;border-radius:10px}
+  .chip.v{background:rgba(34,197,94,.14);color:var(--verde);border:1px solid rgba(34,197,94,.4)}
+  .chip.r{background:rgba(229,72,77,.12);color:var(--rojo);border:1px solid rgba(229,72,77,.35)}
+  .premium{background:linear-gradient(135deg,var(--card),var(--card2));border:1px solid var(--dorado);border-radius:18px;padding:22px;text-align:center;margin-top:22px}
+  .premium .t{font-family:'Poppins';font-size:20px;color:var(--dorado);margin-bottom:6px}
+  .premium p{color:var(--texto-suave);font-size:14px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo"><img src="redzoneedge-icon.png" alt=""> RedZone <span>Edge</span></div>
+    <div id="headerActions">
+      <!-- Cambia según auth -->
+    </div>
+  </header>
+
+  <!-- ===== LOGIN / REGISTRO ===== -->
+  <div id="loginView" class="login-wrap">
+    <div class="login-caja">
+      <h1 id="loginTitulo">Bienvenido</h1>
+      <p id="loginSub">Accede o crea tu cuenta gratis y empieza a comparar partidos.</p>
+
+      <div class="tabs">
+        <button id="tabLogin" class="activo" onclick="cambiarTab('login')">Entrar</button>
+        <button id="tabRegistro" onclick="cambiarTab('registro')">Crear cuenta</button>
+      </div>
+
+      <div class="campo">
+        <label>Correo</label>
+        <input type="email" id="correo" placeholder="tu@email.com" autocomplete="email">
+      </div>
+      <div class="campo">
+        <label>Contraseña</label>
+        <input type="password" id="pass" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <button class="btn btn-verde" id="btnSubmit" onclick="submitForm()">Entrar</button>
+      <div class="msg" id="authMsg"></div>
+      <div class="note">🔒 Tus datos se guardan en RedZone Edge. Solo los usamos para darte acceso.</div>
+    </div>
+  </div>
+
+  <!-- ===== BOARD (cuando está logueado) ===== -->
+  <div id="appView" class="oculto">
+    <div class="bienvenido">👋 ¡Hola!</div>
+    <div class="sub">Este es tu <b>Pattern Board gratis</b>. Compara unidades y patrones de cada partido en una sola vista.</div>
+
+    <div class="grid">
+      <!-- KC vs BUF -->
+      <div class="game">
+        <div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/KC.png"> KC <span>vs</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/BUF.png"> BUF</div><div class="meta">Dom 13:00 · Total 47.5</div></div>
+        <div class="sec">
+          <div class="unit"><div class="lab"><span>Pase — KC #1</span><span>Buf #10</span></div><div class="track"><div class="fill-l" style="width:72%"></div><div class="fill-r" style="width:28%"></div></div></div>
+          <div class="unit"><div class="lab"><span>Carrera — KC #5</span><span>Buf #14</span></div><div class="track"><div class="fill-l" style="width:60%"></div><div class="fill-r" style="width:40%"></div></div></div>
+        </div>
+        <div class="sec">
+          <div class="chips"><span class="chip v">▲ KC ML</span><span class="chip v">▲ KC -4.5</span><span class="chip v">▲ 1ª mitad KC</span><span class="chip r">▼ Over 47.5</span></div>
+        </div>
+      </div>
+      <!-- BAL vs CIN -->
+      <div class="game">
+        <div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/BAL.png"> BAL <span>vs</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/CIN.png"> CIN</div><div class="meta">Dom 16:00 · Total 51.5</div></div>
+        <div class="sec">
+          <div class="unit"><div class="lab"><span>Pase — BAL #5</span><span>Cin #11</span></div><div class="track"><div class="fill-l" style="width:64%"></div><div class="fill-r" style="width:36%"></div></div></div>
+          <div class="unit"><div class="lab"><span>Carrera — BAL #1</span><span>Cin #16</span></div><div class="track"><div class="fill-l" style="width:80%"></div><div class="fill-r" style="width:20%"></div></div></div>
+        </div>
+        <div class="sec">
+          <div class="chips"><span class="chip v">▲ BAL ML</span><span class="chip v">▲ BAL -4</span><span class="chip r">▼ Under 51.5</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="premium">
+      <div class="t">💎 Premium</div>
+      <p>Desbloquea <b>todos los partidos</b>, <b>1ª mitad</b>, <b>stats avanzadas</b> y <b>menús interactivos</b>.</p>
+      <button class="btn btn-verde" onclick="alert('Aquí iría el pago (Gumroad) para desbloquear el Premium.')">Desbloquear Premium</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ============================================================
+     🔐 SUPABASE — login/registro de RedZone Edge
+     ============================================================ */
+  const SUPABASE_URL = "https://eetiqweztqtjhfeplorf.supabase.co";
+  const SUPABASE_ANON_KEY = "sb_publishable_anc_vJPGRlZs1pkgLL_GWQ_661Bl0lV";
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  let modo = 'login';
+
+  function cambiarTab(m){
+    modo = m;
+    document.getElementById('tabLogin').classList.toggle('activo', m==='login');
+    document.getElementById('tabRegistro').classList.toggle('activo', m==='registro');
+    document.getElementById('loginTitulo').textContent = m==='login' ? 'Bienvenido' : 'Crea tu cuenta';
+    document.getElementById('loginSub').textContent = m==='login' ? 'Entra y compara partidos al instante.' : 'Gratis. Solo tu correo y contraseña.';
+    document.getElementById('btnSubmit').textContent = m==='login' ? 'Entrar' : 'Crear cuenta gratis';
+    document.getElementById('authMsg').textContent = '';
+  }
+
+  async function submitForm(){
+    const correo = document.getElementById('correo').value.trim();
+    const pass = document.getElementById('pass').value;
+    const msg = document.getElementById('authMsg');
+    msg.className = 'msg';
+    if(!correo || !pass){ msg.textContent = 'Escribe tu correo y contraseña.'; msg.classList.add('err'); return; }
+
+    try {
+      if(modo === 'login'){
+        const { error } = await supabase.auth.signInWithPassword({ email: correo, password: pass });
+        if(error) throw error;
+      } else {
+        const { error } = await supabase.auth.signUp({ email: correo, password: pass });
+        if(error) throw error;
+        msg.textContent = '✅ Cuenta creada. Revisa tu correo para confirmar (o ya ingresaste).';
+        msg.classList.add('ok');
+        // Supabase por defecto pide confirmar email; forzamos sesión si no hay confirmación
+        const { data } = await supabase.auth.signInWithPassword({ email: correo, password: pass }).catch(()=>({data:null,error:null}));
+        if(data && data.user){ /* ya logueado */ }
+      }
+    } catch(e){
+      msg.textContent = '⚠️ ' + (e.message || e.error_description || 'No se pudo. Revisa tus datos.');
+      msg.classList.add('err');
+    }
+  }
+
+  // Estado de la sesión
+  function mostrarApp(user){
+    document.getElementById('loginView').classList.add('oculto');
+    document.getElementById('appView').classList.remove('oculto');
+    document.getElementById('headerActions').innerHTML =
+      '<div class="user-chip"><span class="email">'+(user?user.email:'')+'</span><span class="avatar">'+(user?user.email[0].toUpperCase():'?')+'</span><button class="btn btn-borde" onclick="logout()">Salir</button></div>';
+  }
+  function mostrarLogin(){
+    document.getElementById('appView').classList.add('oculto');
+    document.getElementById('loginView').classList.remove('oculto');
+    document.getElementById('headerActions').innerHTML = '';
+  }
+  function logout(){ supabase.auth.signOut(); }
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if(session && session.user){ mostrarApp(session.user); }
+    else { mostrarLogin(); }
+  });
+</script>
+</body>
+</html>
