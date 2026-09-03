@@ -224,7 +224,7 @@
     document.getElementById('appView').classList.remove('oculto');
     document.getElementById('headerActions').innerHTML =
       '<div class="user-chip"><span class="email">'+(user?user.email:'')+'</span><span class="avatar">'+(user?user.email[0].toUpperCase():'?')+'</span><button class="btn btn-borde" onclick="logout()">Salir</button></div>';
-    renderFichas();   // carga las fichas reales
+    checkPremium(user ? user.email : '');   // ¿es premium? → luego renderiza
   }
   function mostrarLogin(){
     document.getElementById('appView').classList.add('oculto');
@@ -259,6 +259,16 @@
     return '<div class="unit"><div class="lab"><span><b>'+nombre+'</b> · '+aTxt+'</span><span>'+hTxt+'</span></div><div class="track"><div class="fill-l'+(aJ?'':' d')+'" style="width:'+pA+'%"></div><div class="fill-r'+(aJ?' d':'')+'" style="width:'+(100-pA)+'%"></div></div></div>';
   }
 
+  var isPremium = false;
+  async function checkPremium(email){
+    try{
+      if(!client){ isPremium=false; renderFichas(); return; }
+      var { data } = await client.from('premium_users').select('*').eq('email', (email||'').toLowerCase());
+      isPremium = data && data.length>0;
+    }catch(e){ isPremium=false; }
+    renderFichas();
+  }
+
   async function renderFichas(){
     var grid = document.getElementById('gridFichas');
     if(!grid) return;
@@ -279,6 +289,14 @@
         var total=(f.odds&&f.odds.total)?f.odds.total.over:'';
         var w = f.weather;
         var clim = w ? ('Temperatura '+w.temp+'°C · Viento '+w.wind+' km/h · Lluvia '+w.rain+' mm') : 'Clima: n/d';
+        var lock = '<p style="font-size:13px;color:var(--texto-suave)">🔒 Esta sección es <b>Premium</b>. <a href="https://quintero236.gumroad.com/l/xrwvr" target="_blank" style="color:var(--verde);font-weight:600">Desbloquear Premium $9.99/mes</a></p>';
+        var unidadHtml = isPremium ? (
+          bUnidad('Pase', f.ataque&&f.ataque.away.pass, f.ataque&&f.ataque.away.r.pass, f.ataque&&f.ataque.home.pass, f.ataque&&f.ataque.home.r.pass)+
+          bUnidad('Carrera', f.ataque&&f.ataque.away.rush, f.ataque&&f.ataque.away.r.rush, f.ataque&&f.ataque.home.rush, f.ataque&&f.ataque.home.r.rush)+
+          bUnidad('Puntos', f.ataque&&f.ataque.away.pts, f.ataque&&f.ataque.away.r.pts, f.ataque&&f.ataque.home.pts, f.ataque&&f.ataque.home.r.pts)+
+          '<p style="font-size:11.5px;color:var(--texto-suave);margin-top:6px">🔒 Defensa + EPA: próximamente (requiere sportsdata).</p>'
+        ) : lock;
+        var analisisHtml = isPremium ? ('<p style="font-size:13px;color:var(--texto)">'+(f.analisis_ia||'Análisis próximamente.')+'</p><p style="font-size:11px;color:var(--texto-suave);margin-top:8px">🤖 Generado con IA · no es consejo de apuestas. Solo Premium.</p>') : lock;
         html += '<div class="game">'+
           '<div class="game-head"><div class="teams"><img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.away)+'.png"> '+f.away+' <span class="vs">@</span> <img src="https://a.espncdn.com/i/teamlogos/nfl/500/'+ab(f.home)+'.png"> '+f.home+'</div><div class="meta">'+(f.commence_time?fmtTime(f.commence_time):f.fecha)+'<br><b style="color:var(--dorado)">'+(f.venue||'')+'</b></div></div>'+
 
@@ -301,16 +319,8 @@
             '<div class="fila">🌦️ '+clim+'</div>'+
           '</div></details>'+
 
-          '<details class="fsec"><summary>⚔️ Unidad vs Unidad (ofensiva 2025) <span class="chev">▼</span></summary><div class="body">'+
-            bUnidad('Pase', f.ataque&&f.ataque.away.pass, f.ataque&&f.ataque.away.r.pass, f.ataque&&f.ataque.home.pass, f.ataque&&f.ataque.home.r.pass)+
-            bUnidad('Carrera', f.ataque&&f.ataque.away.rush, f.ataque&&f.ataque.away.r.rush, f.ataque&&f.ataque.home.rush, f.ataque&&f.ataque.home.r.rush)+
-            bUnidad('Puntos', f.ataque&&f.ataque.away.pts, f.ataque&&f.ataque.away.r.pts, f.ataque&&f.ataque.home.pts, f.ataque&&f.ataque.home.r.pts)+
-            '<p style="font-size:11.5px;color:var(--texto-suave);margin-top:6px">🔒 Defensa + EPA: próximamente (requiere sportsdata).</p>'+
-          '</div></details>'+
-          '<details class="fsec"><summary>🤖 Análisis IA · 🔒 Premium <span class="chev">▼</span></summary><div class="body">'+
-            '<p style="font-size:13px;color:var(--texto)">'+(f.analisis_ia||'Análisis próximamente.')+'</p>'+
-            '<p style="font-size:11px;color:var(--texto-suave);margin-top:8px">🤖 Generado con IA · no es consejo de apuestas. Solo disponible en Premium.</p>'+
-          '</div></details>'+
+          '<details class="fsec"><summary>⚔️ Unidad vs Unidad (ofensiva 2025) <span class="chev">▼</span></summary><div class="body">'+unidadHtml+'</div></details>'+
+          '<details class="fsec"><summary>🤖 Análisis IA · Premium <span class="chev">▼</span></summary><div class="body">'+analisisHtml+'</div></details>'+
           '<details class="fsec"><summary>🚑 Lesiones <span class="chev">▼</span></summary><div class="body">'+
             '<div style="font-size:12px;color:var(--texto-suave);margin-bottom:5px"><b style="color:#fff">'+f.away+'</b>: '+((f.injuries&&f.injuries.away&&f.injuries.away.length)?f.injuries.away.slice(0,4).join(' · '):'sin bajas')+'</div>'+
             '<div style="font-size:12px;color:var(--texto-suave)"><b style="color:#fff">'+f.home+'</b>: '+((f.injuries&&f.injuries.home&&f.injuries.home.length)?f.injuries.home.slice(0,4).join(' · '):'sin bajas')+'</div>'+
