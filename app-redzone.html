@@ -142,13 +142,18 @@
 <script>
   /* ============================================================
      🔐 SUPABASE — login/registro de RedZone Edge
+     (a prueba de fallos: los menús funcionan aunque falle Supabase)
      ============================================================ */
   const SUPABASE_URL = "https://eetiqweztqtjhfeplorf.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_anc_vJPGRlZs1pkgLL_GWQ_661Bl0lV";
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  let supabase = null;
+  try { supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
+  catch(e){ console.error('Supabase init:', e); }
 
   let modo = 'login';
 
+  // Función de cambio de pestaña (se expone globalmente; funciona siempre)
   function cambiarTab(m){
     modo = m;
     document.getElementById('tabLogin').classList.toggle('activo', m==='login');
@@ -158,6 +163,7 @@
     document.getElementById('btnSubmit').textContent = m==='login' ? 'Entrar' : 'Crear cuenta gratis';
     document.getElementById('authMsg').textContent = '';
   }
+  window.cambiarTab = cambiarTab;
 
   async function submitForm(){
     const correo = document.getElementById('correo').value.trim();
@@ -165,27 +171,28 @@
     const msg = document.getElementById('authMsg');
     msg.className = 'msg';
     if(!correo || !pass){ msg.textContent = 'Escribe tu correo y contraseña.'; msg.classList.add('err'); return; }
+    if(!supabase){ msg.textContent = '⚠️ Hubo un problema cargando la conexión. Recarga la página.'; msg.classList.add('err'); return; }
 
     try {
       if(modo === 'login'){
         const { error } = await supabase.auth.signInWithPassword({ email: correo, password: pass });
         if(error) throw error;
       } else {
-        const { error } = await supabase.auth.signUp({ email: correo, password: pass });
+        const { data, error } = await supabase.auth.signUp({ email: correo, password: pass });
         if(error) throw error;
-        msg.textContent = '✅ Cuenta creada. Revisa tu correo para confirmar (o ya ingresaste).';
-        msg.classList.add('ok');
-        // Supabase por defecto pide confirmar email; forzamos sesión si no hay confirmación
-        const { data } = await supabase.auth.signInWithPassword({ email: correo, password: pass }).catch(()=>({data:null,error:null}));
-        if(data && data.user){ /* ya logueado */ }
+        // Si "Confirm email" está OFF, signUp devuelve sesión directa.
+        if(!(data && data.session)) {
+          msg.textContent = '✅ Cuenta creada. Inicia sesión para entrar.';
+          msg.classList.add('ok');
+        }
       }
     } catch(e){
       msg.textContent = '⚠️ ' + (e.message || e.error_description || 'No se pudo. Revisa tus datos.');
       msg.classList.add('err');
     }
   }
+  window.submitForm = submitForm;
 
-  // Estado de la sesión
   function mostrarApp(user){
     document.getElementById('loginView').classList.add('oculto');
     document.getElementById('appView').classList.remove('oculto');
@@ -197,12 +204,15 @@
     document.getElementById('loginView').classList.remove('oculto');
     document.getElementById('headerActions').innerHTML = '';
   }
-  function logout(){ supabase.auth.signOut(); }
+  function logout(){ if(supabase) supabase.auth.signOut(); }
+  window.logout = logout;
 
-  supabase.auth.onAuthStateChange((event, session) => {
-    if(session && session.user){ mostrarApp(session.user); }
-    else { mostrarLogin(); }
-  });
+  if(supabase){
+    supabase.auth.onAuthStateChange((event, session) => {
+      if(session && session.user){ mostrarApp(session.user); }
+      else { mostrarLogin(); }
+    });
+  }
 </script>
 </body>
 </html>
